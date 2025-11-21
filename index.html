@@ -1,0 +1,3443 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_eeda0e7828ac9dffac06f06ac714d99d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_eeda0e7828ac9dffac06f06ac714d99d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_eeda0e7828ac9dffac06f06ac714d99d = L.map(
+                "map_eeda0e7828ac9dffac06f06ac714d99d",
+                {
+                    center: [10.445578000000003, 106.85782699999996],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+
+            
+
+        
+    
+            var tile_layer_4d701b7abb62631222a80eee7a3d6454 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_4d701b7abb62631222a80eee7a3d6454.addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+            var heat_map_65afe6a7823d9d56f279c14b9a41da82 = L.heatLayer(
+                [[10.4201, 106.8689, 4.81], [10.4205, 106.8685, 4.95], [10.421, 106.868, 4.02], [10.4198, 106.8692, 4.73], [10.418, 106.87, 4.15], [10.4185, 106.8695, 3.9], [10.459, 106.841, 4.35], [10.4585, 106.8405, 4.5], [10.46, 106.84, 3.95], [10.4605, 106.8415, 4.65], [10.422, 106.8675, 2.95], [10.51, 106.815, 1.65], [10.5105, 106.8145, 1.8], [10.511, 106.814, 1.25], [10.5115, 106.8155, 1.1], [10.512, 106.816, 1.75], [10.411, 106.878, 0.95], [10.4115, 106.8785, 1.1], [10.412, 106.879, 1.25], [10.4125, 106.8795, 1.45], [10.4203, 106.8687, 4.78], [10.419, 106.8698, 4.08], [10.457, 106.842, 4.4], [10.509, 106.816, 1.7], [10.413, 106.88, 1.55], [10.44, 106.872, 3.15], [10.441, 106.8715, 2.65], [10.442, 106.871, 2.7], [10.443, 106.8705, 3.3], [10.45, 106.82, 1.05], [10.451, 106.821, 1.15], [10.452, 106.822, 1.35], [10.453, 106.823, 2.15], [10.454, 106.824, 2.4], [10.43, 106.865, 3.55], [10.431, 106.8645, 3.7], [10.432, 106.864, 3.6], [10.417, 106.871, 4.88], [10.4165, 106.8715, 4.25], [10.4575, 106.8412, 4.55], [10.5125, 106.8165, 1.85], [10.4105, 106.8775, 1.0], [10.435, 106.863, 4.0], [10.445, 106.87, 3.35], [10.47, 106.85, 2.05], [10.471, 106.851, 2.1], [10.472, 106.852, 3.6], [10.4135, 106.8805, 1.65], [10.52, 106.81, 1.4], [10.4195, 106.869, 4.98], [10.4565, 106.8425, 4.2], [10.41, 106.877, 1.05], [10.5095, 106.8148, 1.08], [10.444, 106.8702, 3.2], [10.48, 106.855, 2.3], [10.481, 106.856, 2.35], [10.482, 106.857, 2.0], [10.4188, 106.8696, 4.1], [10.455, 106.843, 4.55], [10.5085, 106.8152, 1.72], [10.414, 106.881, 1.7], [10.4, 106.89, 3.55], [10.401, 106.891, 2.8], [10.402, 106.892, 3.7], [10.403, 106.893, 3.85], [10.39, 106.9, 2.95], [10.391, 106.901, 2.1], [10.392, 106.902, 1.95], [10.404, 106.894, 3.75], [10.425, 106.867, 3.0], [10.4555, 106.8435, 4.1], [10.508, 106.8157, 1.68], [10.4145, 106.8815, 1.75], [10.446, 106.8698, 3.4], [10.473, 106.853, 3.5], [10.474, 106.854, 2.1], [10.521, 106.809, 1.45], [10.4192, 106.8694, 4.88], [10.456, 106.8428, 4.5], [10.5075, 106.8162, 1.7], [10.415, 106.882, 1.85], [10.405, 106.895, 3.9], [10.406, 106.896, 2.85], [10.393, 106.903, 3.0], [10.394, 106.904, 2.2], [10.433, 106.8635, 3.65], [10.434, 106.8632, 3.75], [10.4182, 106.8702, 3.98], [10.4545, 106.844, 4.25], [10.5065, 106.8172, 1.15], [10.4155, 106.8825, 1.9], [10.447, 106.8696, 3.45], [10.475, 106.855, 3.4], [10.476, 106.856, 2.15], [10.522, 106.808, 1.5], [10.4184, 106.8704, 4.85], [10.455, 106.8445, 4.6], [10.5065, 106.8172, 1.12], [10.416, 106.883, 1.95], [10.448, 106.8694, 3.5]],
+                {
+  "minOpacity": 0.4,
+  "maxZoom": 18,
+  "radius": 15,
+  "blur": 10,
+  "gradient": {
+  0: "blue",
+  0.4: "lime",
+  0.7: "orange",
+  1: "red",
+},
+}
+            );
+        
+    
+            heat_map_65afe6a7823d9d56f279c14b9a41da82.addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+            var circle_marker_18b2079ef762fdf1c1c934ecef180b8d = L.circleMarker(
+                [10.4201, 106.8689],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_14f21b34e4260ba226781ab2c75a919e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_020bcc3cabd7d9ef570c449ef9127b0d = $(`<div id="html_020bcc3cabd7d9ef570c449ef9127b0d" style="width: 100.0%; height: 100.0%;">     <b>Biển 30/4 & Long Hòa</b><br><br>     <b>ID:</b> 1<br>     <b>Chỉ số Du khách:</b> 9<br>     <b>Xói mòn:</b> 0.2 m/năm<br>     <b>Vi nhựa:</b> 4.81 sợi/g<br>     <b>Vĩ độ:</b> 10.4201<br>     <b>Kinh độ:</b> 106.8689     </div>`)[0];
+                popup_14f21b34e4260ba226781ab2c75a919e.setContent(html_020bcc3cabd7d9ef570c449ef9127b0d);
+            
+        
+
+        circle_marker_18b2079ef762fdf1c1c934ecef180b8d.bindPopup(popup_14f21b34e4260ba226781ab2c75a919e)
+        ;
+
+        
+    
+    
+            circle_marker_18b2079ef762fdf1c1c934ecef180b8d.bindTooltip(
+                `<div>
+                     Biển 30/4 & Long Hòa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_956f77b7a9213cd18e07bd4a2eafa088 = L.circleMarker(
+                [10.4205, 106.8685],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_dca6829f01604b9a3016945f44166538 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b031e2449c63f513ca100eef511038a6 = $(`<div id="html_b031e2449c63f513ca100eef511038a6" style="width: 100.0%; height: 100.0%;">     <b>Biển 30/4 & Long Hòa</b><br><br>     <b>ID:</b> 2<br>     <b>Chỉ số Du khách:</b> 9<br>     <b>Xói mòn:</b> 0.2 m/năm<br>     <b>Vi nhựa:</b> 4.95 sợi/g<br>     <b>Vĩ độ:</b> 10.4205<br>     <b>Kinh độ:</b> 106.8685     </div>`)[0];
+                popup_dca6829f01604b9a3016945f44166538.setContent(html_b031e2449c63f513ca100eef511038a6);
+            
+        
+
+        circle_marker_956f77b7a9213cd18e07bd4a2eafa088.bindPopup(popup_dca6829f01604b9a3016945f44166538)
+        ;
+
+        
+    
+    
+            circle_marker_956f77b7a9213cd18e07bd4a2eafa088.bindTooltip(
+                `<div>
+                     Biển 30/4 & Long Hòa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_607bfd6170116a3490181b5e73f2eee6 = L.circleMarker(
+                [10.421, 106.868],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_8964d33f0b00cc4b19541ab189ddbff7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_00bd868119bf96ea0eee04a9b1ae6e9e = $(`<div id="html_00bd868119bf96ea0eee04a9b1ae6e9e" style="width: 100.0%; height: 100.0%;">     <b>Biển 30/4 & Long Hòa</b><br><br>     <b>ID:</b> 3<br>     <b>Chỉ số Du khách:</b> 8<br>     <b>Xói mòn:</b> 0.3 m/năm<br>     <b>Vi nhựa:</b> 4.02 sợi/g<br>     <b>Vĩ độ:</b> 10.421<br>     <b>Kinh độ:</b> 106.868     </div>`)[0];
+                popup_8964d33f0b00cc4b19541ab189ddbff7.setContent(html_00bd868119bf96ea0eee04a9b1ae6e9e);
+            
+        
+
+        circle_marker_607bfd6170116a3490181b5e73f2eee6.bindPopup(popup_8964d33f0b00cc4b19541ab189ddbff7)
+        ;
+
+        
+    
+    
+            circle_marker_607bfd6170116a3490181b5e73f2eee6.bindTooltip(
+                `<div>
+                     Biển 30/4 & Long Hòa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3c7bedd5eb3fe887b6559892fb860920 = L.circleMarker(
+                [10.4198, 106.8692],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_8de57f9642f2978039400895713c17c4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1bd1810d1bd8757205453387de52248c = $(`<div id="html_1bd1810d1bd8757205453387de52248c" style="width: 100.0%; height: 100.0%;">     <b>Biển 30/4 & Long Hòa</b><br><br>     <b>ID:</b> 4<br>     <b>Chỉ số Du khách:</b> 10<br>     <b>Xói mòn:</b> 0.1 m/năm<br>     <b>Vi nhựa:</b> 4.73 sợi/g<br>     <b>Vĩ độ:</b> 10.4198<br>     <b>Kinh độ:</b> 106.8692     </div>`)[0];
+                popup_8de57f9642f2978039400895713c17c4.setContent(html_1bd1810d1bd8757205453387de52248c);
+            
+        
+
+        circle_marker_3c7bedd5eb3fe887b6559892fb860920.bindPopup(popup_8de57f9642f2978039400895713c17c4)
+        ;
+
+        
+    
+    
+            circle_marker_3c7bedd5eb3fe887b6559892fb860920.bindTooltip(
+                `<div>
+                     Biển 30/4 & Long Hòa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_47d4d414cb0b31ce3741e2aecd7f706b = L.circleMarker(
+                [10.418, 106.87],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_08a2efae0e436248ad14bdea1a673d4e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_60b8c9f221c82bd8fa65161314ca12ad = $(`<div id="html_60b8c9f221c82bd8fa65161314ca12ad" style="width: 100.0%; height: 100.0%;">     <b>Biển 30/4 & Long Hòa</b><br><br>     <b>ID:</b> 5<br>     <b>Chỉ số Du khách:</b> 8<br>     <b>Xói mòn:</b> 0.3 m/năm<br>     <b>Vi nhựa:</b> 4.15 sợi/g<br>     <b>Vĩ độ:</b> 10.418<br>     <b>Kinh độ:</b> 106.87     </div>`)[0];
+                popup_08a2efae0e436248ad14bdea1a673d4e.setContent(html_60b8c9f221c82bd8fa65161314ca12ad);
+            
+        
+
+        circle_marker_47d4d414cb0b31ce3741e2aecd7f706b.bindPopup(popup_08a2efae0e436248ad14bdea1a673d4e)
+        ;
+
+        
+    
+    
+            circle_marker_47d4d414cb0b31ce3741e2aecd7f706b.bindTooltip(
+                `<div>
+                     Biển 30/4 & Long Hòa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4484bc87f3c6b4e694bf1db409b593fa = L.circleMarker(
+                [10.4185, 106.8695],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_948b9e14a1b99f980d5ce22a9d6b7cff = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b31fe9275a10a6595ce7d101e8f23d56 = $(`<div id="html_b31fe9275a10a6595ce7d101e8f23d56" style="width: 100.0%; height: 100.0%;">     <b>Biển 30/4 & Long Hòa</b><br><br>     <b>ID:</b> 6<br>     <b>Chỉ số Du khách:</b> 8<br>     <b>Xói mòn:</b> 0.1 m/năm<br>     <b>Vi nhựa:</b> 3.9 sợi/g<br>     <b>Vĩ độ:</b> 10.4185<br>     <b>Kinh độ:</b> 106.8695     </div>`)[0];
+                popup_948b9e14a1b99f980d5ce22a9d6b7cff.setContent(html_b31fe9275a10a6595ce7d101e8f23d56);
+            
+        
+
+        circle_marker_4484bc87f3c6b4e694bf1db409b593fa.bindPopup(popup_948b9e14a1b99f980d5ce22a9d6b7cff)
+        ;
+
+        
+    
+    
+            circle_marker_4484bc87f3c6b4e694bf1db409b593fa.bindTooltip(
+                `<div>
+                     Biển 30/4 & Long Hòa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_575894af6abdb2e123ab7493cf93e0fe = L.circleMarker(
+                [10.459, 106.841],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_a7f27bf3fc08b2e4ad15b4fe77f11414 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_570800a1052c755a1335ab423dfcdcb9 = $(`<div id="html_570800a1052c755a1335ab423dfcdcb9" style="width: 100.0%; height: 100.0%;">     <b>Đảo Khỉ</b><br><br>     <b>ID:</b> 7<br>     <b>Chỉ số Du khách:</b> 9<br>     <b>Xói mòn:</b> 0.0 m/năm<br>     <b>Vi nhựa:</b> 4.35 sợi/g<br>     <b>Vĩ độ:</b> 10.459<br>     <b>Kinh độ:</b> 106.841     </div>`)[0];
+                popup_a7f27bf3fc08b2e4ad15b4fe77f11414.setContent(html_570800a1052c755a1335ab423dfcdcb9);
+            
+        
+
+        circle_marker_575894af6abdb2e123ab7493cf93e0fe.bindPopup(popup_a7f27bf3fc08b2e4ad15b4fe77f11414)
+        ;
+
+        
+    
+    
+            circle_marker_575894af6abdb2e123ab7493cf93e0fe.bindTooltip(
+                `<div>
+                     Đảo Khỉ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8f1c3efbfda6cd6befcfe78bb77286dd = L.circleMarker(
+                [10.4585, 106.8405],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_6e631a187c9b55de5c6baa92c2387566 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d8396387b5b9546cb557b07bdacddb88 = $(`<div id="html_d8396387b5b9546cb557b07bdacddb88" style="width: 100.0%; height: 100.0%;">     <b>Đảo Khỉ</b><br><br>     <b>ID:</b> 8<br>     <b>Chỉ số Du khách:</b> 9<br>     <b>Xói mòn:</b> 0.1 m/năm<br>     <b>Vi nhựa:</b> 4.5 sợi/g<br>     <b>Vĩ độ:</b> 10.4585<br>     <b>Kinh độ:</b> 106.8405     </div>`)[0];
+                popup_6e631a187c9b55de5c6baa92c2387566.setContent(html_d8396387b5b9546cb557b07bdacddb88);
+            
+        
+
+        circle_marker_8f1c3efbfda6cd6befcfe78bb77286dd.bindPopup(popup_6e631a187c9b55de5c6baa92c2387566)
+        ;
+
+        
+    
+    
+            circle_marker_8f1c3efbfda6cd6befcfe78bb77286dd.bindTooltip(
+                `<div>
+                     Đảo Khỉ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a00a196232559b63cff97c9b1ce74f64 = L.circleMarker(
+                [10.46, 106.84],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_e5e5223195f89430ef8b844fe7c80bbe = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9748e3379e2c6f2f3a36cd6b64a50a82 = $(`<div id="html_9748e3379e2c6f2f3a36cd6b64a50a82" style="width: 100.0%; height: 100.0%;">     <b>Đảo Khỉ</b><br><br>     <b>ID:</b> 9<br>     <b>Chỉ số Du khách:</b> 8<br>     <b>Xói mòn:</b> 0.2 m/năm<br>     <b>Vi nhựa:</b> 3.95 sợi/g<br>     <b>Vĩ độ:</b> 10.46<br>     <b>Kinh độ:</b> 106.84     </div>`)[0];
+                popup_e5e5223195f89430ef8b844fe7c80bbe.setContent(html_9748e3379e2c6f2f3a36cd6b64a50a82);
+            
+        
+
+        circle_marker_a00a196232559b63cff97c9b1ce74f64.bindPopup(popup_e5e5223195f89430ef8b844fe7c80bbe)
+        ;
+
+        
+    
+    
+            circle_marker_a00a196232559b63cff97c9b1ce74f64.bindTooltip(
+                `<div>
+                     Đảo Khỉ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_27b175e6bdba10c77e4b57db1d9d39af = L.circleMarker(
+                [10.4605, 106.8415],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_53303e0a9af170bdb643f809cba82ab0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b12fcb563cf9d1c8697b3b6935e0561d = $(`<div id="html_b12fcb563cf9d1c8697b3b6935e0561d" style="width: 100.0%; height: 100.0%;">     <b>Đảo Khỉ</b><br><br>     <b>ID:</b> 10<br>     <b>Chỉ số Du khách:</b> 10<br>     <b>Xói mòn:</b> 0.1 m/năm<br>     <b>Vi nhựa:</b> 4.65 sợi/g<br>     <b>Vĩ độ:</b> 10.4605<br>     <b>Kinh độ:</b> 106.8415     </div>`)[0];
+                popup_53303e0a9af170bdb643f809cba82ab0.setContent(html_b12fcb563cf9d1c8697b3b6935e0561d);
+            
+        
+
+        circle_marker_27b175e6bdba10c77e4b57db1d9d39af.bindPopup(popup_53303e0a9af170bdb643f809cba82ab0)
+        ;
+
+        
+    
+    
+            circle_marker_27b175e6bdba10c77e4b57db1d9d39af.bindTooltip(
+                `<div>
+                     Đảo Khỉ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cb2dce75e9170342e4622c7e2db1ddda = L.circleMarker(
+                [10.422, 106.8675],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_1839f55361639c8bc9147c1b570f1baa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_eb6789658b34b7440d61cb4c6fd1e79d = $(`<div id="html_eb6789658b34b7440d61cb4c6fd1e79d" style="width: 100.0%; height: 100.0%;">     <b>Biển 30/4 & Long Hòa</b><br><br>     <b>ID:</b> 11<br>     <b>Chỉ số Du khách:</b> 6<br>     <b>Xói mòn:</b> 0.2 m/năm<br>     <b>Vi nhựa:</b> 2.95 sợi/g<br>     <b>Vĩ độ:</b> 10.422<br>     <b>Kinh độ:</b> 106.8675     </div>`)[0];
+                popup_1839f55361639c8bc9147c1b570f1baa.setContent(html_eb6789658b34b7440d61cb4c6fd1e79d);
+            
+        
+
+        circle_marker_cb2dce75e9170342e4622c7e2db1ddda.bindPopup(popup_1839f55361639c8bc9147c1b570f1baa)
+        ;
+
+        
+    
+    
+            circle_marker_cb2dce75e9170342e4622c7e2db1ddda.bindTooltip(
+                `<div>
+                     Biển 30/4 & Long Hòa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_328db878af38a43c873148b5a32e0054 = L.circleMarker(
+                [10.51, 106.815],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_9dac3bd3da74932286a777da149a8dc0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_af95c00f3190b92defcdb7facf37ba8e = $(`<div id="html_af95c00f3190b92defcdb7facf37ba8e" style="width: 100.0%; height: 100.0%;">     <b>Khu du lịch Vàm Sát</b><br><br>     <b>ID:</b> 12<br>     <b>Chỉ số Du khách:</b> 7<br>     <b>Xói mòn:</b> 0.4 m/năm<br>     <b>Vi nhựa:</b> 1.65 sợi/g<br>     <b>Vĩ độ:</b> 10.51<br>     <b>Kinh độ:</b> 106.815     </div>`)[0];
+                popup_9dac3bd3da74932286a777da149a8dc0.setContent(html_af95c00f3190b92defcdb7facf37ba8e);
+            
+        
+
+        circle_marker_328db878af38a43c873148b5a32e0054.bindPopup(popup_9dac3bd3da74932286a777da149a8dc0)
+        ;
+
+        
+    
+    
+            circle_marker_328db878af38a43c873148b5a32e0054.bindTooltip(
+                `<div>
+                     Khu du lịch Vàm Sát
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_82c47da7c2c9b6523b7619968c1990bf = L.circleMarker(
+                [10.5105, 106.8145],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_e8dd33ab81bc815e885d5253c2e2e98b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_251b939bc46f6c2c7737a96cee3f5e76 = $(`<div id="html_251b939bc46f6c2c7737a96cee3f5e76" style="width: 100.0%; height: 100.0%;">     <b>Khu du lịch Vàm Sát</b><br><br>     <b>ID:</b> 13<br>     <b>Chỉ số Du khách:</b> 7<br>     <b>Xói mòn:</b> 0.3 m/năm<br>     <b>Vi nhựa:</b> 1.8 sợi/g<br>     <b>Vĩ độ:</b> 10.5105<br>     <b>Kinh độ:</b> 106.8145     </div>`)[0];
+                popup_e8dd33ab81bc815e885d5253c2e2e98b.setContent(html_251b939bc46f6c2c7737a96cee3f5e76);
+            
+        
+
+        circle_marker_82c47da7c2c9b6523b7619968c1990bf.bindPopup(popup_e8dd33ab81bc815e885d5253c2e2e98b)
+        ;
+
+        
+    
+    
+            circle_marker_82c47da7c2c9b6523b7619968c1990bf.bindTooltip(
+                `<div>
+                     Khu du lịch Vàm Sát
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_442875180d4fbd3dff8dd5225e6659b0 = L.circleMarker(
+                [10.511, 106.814],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_85181849d7ad5fbd07a05337f9bd173b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4d74c3dc50fff88184961311243ead00 = $(`<div id="html_4d74c3dc50fff88184961311243ead00" style="width: 100.0%; height: 100.0%;">     <b>Khu du lịch Vàm Sát</b><br><br>     <b>ID:</b> 14<br>     <b>Chỉ số Du khách:</b> 6<br>     <b>Xói mòn:</b> 0.1 m/năm<br>     <b>Vi nhựa:</b> 1.25 sợi/g<br>     <b>Vĩ độ:</b> 10.511<br>     <b>Kinh độ:</b> 106.814     </div>`)[0];
+                popup_85181849d7ad5fbd07a05337f9bd173b.setContent(html_4d74c3dc50fff88184961311243ead00);
+            
+        
+
+        circle_marker_442875180d4fbd3dff8dd5225e6659b0.bindPopup(popup_85181849d7ad5fbd07a05337f9bd173b)
+        ;
+
+        
+    
+    
+            circle_marker_442875180d4fbd3dff8dd5225e6659b0.bindTooltip(
+                `<div>
+                     Khu du lịch Vàm Sát
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0d97c9e3e2845b48dc3606f17e732241 = L.circleMarker(
+                [10.5115, 106.8155],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_f240935c2227de4feee2532704c7391c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_43f3df5055d48439ebba7f40f8b0be5b = $(`<div id="html_43f3df5055d48439ebba7f40f8b0be5b" style="width: 100.0%; height: 100.0%;">     <b>Khu du lịch Vàm Sát</b><br><br>     <b>ID:</b> 15<br>     <b>Chỉ số Du khách:</b> 6<br>     <b>Xói mòn:</b> 0.2 m/năm<br>     <b>Vi nhựa:</b> 1.1 sợi/g<br>     <b>Vĩ độ:</b> 10.5115<br>     <b>Kinh độ:</b> 106.8155     </div>`)[0];
+                popup_f240935c2227de4feee2532704c7391c.setContent(html_43f3df5055d48439ebba7f40f8b0be5b);
+            
+        
+
+        circle_marker_0d97c9e3e2845b48dc3606f17e732241.bindPopup(popup_f240935c2227de4feee2532704c7391c)
+        ;
+
+        
+    
+    
+            circle_marker_0d97c9e3e2845b48dc3606f17e732241.bindTooltip(
+                `<div>
+                     Khu du lịch Vàm Sát
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_64ba46b4440fa47d07b75b97bd30046f = L.circleMarker(
+                [10.512, 106.816],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_60e3c953d62c02f1373fcd487192049a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_db38afd4e351d68504b03cd80b593149 = $(`<div id="html_db38afd4e351d68504b03cd80b593149" style="width: 100.0%; height: 100.0%;">     <b>Khu du lịch Vàm Sát</b><br><br>     <b>ID:</b> 16<br>     <b>Chỉ số Du khách:</b> 7<br>     <b>Xói mòn:</b> 0.3 m/năm<br>     <b>Vi nhựa:</b> 1.75 sợi/g<br>     <b>Vĩ độ:</b> 10.512<br>     <b>Kinh độ:</b> 106.816     </div>`)[0];
+                popup_60e3c953d62c02f1373fcd487192049a.setContent(html_db38afd4e351d68504b03cd80b593149);
+            
+        
+
+        circle_marker_64ba46b4440fa47d07b75b97bd30046f.bindPopup(popup_60e3c953d62c02f1373fcd487192049a)
+        ;
+
+        
+    
+    
+            circle_marker_64ba46b4440fa47d07b75b97bd30046f.bindTooltip(
+                `<div>
+                     Khu du lịch Vàm Sát
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c3e80ff10abe8cbebc96e46d92c1e43a = L.circleMarker(
+                [10.411, 106.878],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_0d476dd31beb282d0b548cd28a7c8ffb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4c306085e06cdaaf7dbb86ab5fcc959c = $(`<div id="html_4c306085e06cdaaf7dbb86ab5fcc959c" style="width: 100.0%; height: 100.0%;">     <b>Bờ Rừng Lý Nhơn</b><br><br>     <b>ID:</b> 17<br>     <b>Chỉ số Du khách:</b> 2<br>     <b>Xói mòn:</b> 1.3 m/năm<br>     <b>Vi nhựa:</b> 0.95 sợi/g<br>     <b>Vĩ độ:</b> 10.411<br>     <b>Kinh độ:</b> 106.878     </div>`)[0];
+                popup_0d476dd31beb282d0b548cd28a7c8ffb.setContent(html_4c306085e06cdaaf7dbb86ab5fcc959c);
+            
+        
+
+        circle_marker_c3e80ff10abe8cbebc96e46d92c1e43a.bindPopup(popup_0d476dd31beb282d0b548cd28a7c8ffb)
+        ;
+
+        
+    
+    
+            circle_marker_c3e80ff10abe8cbebc96e46d92c1e43a.bindTooltip(
+                `<div>
+                     Bờ Rừng Lý Nhơn
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3e164cb7f1c16bac31a0e388c503492f = L.circleMarker(
+                [10.4115, 106.8785],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_6fcbf464dc09fe243598fc39f9678ed5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8fc6752a4c168721479a5d74d1285ef4 = $(`<div id="html_8fc6752a4c168721479a5d74d1285ef4" style="width: 100.0%; height: 100.0%;">     <b>Bờ Rừng Lý Nhơn</b><br><br>     <b>ID:</b> 18<br>     <b>Chỉ số Du khách:</b> 3<br>     <b>Xói mòn:</b> 1.4 m/năm<br>     <b>Vi nhựa:</b> 1.1 sợi/g<br>     <b>Vĩ độ:</b> 10.4115<br>     <b>Kinh độ:</b> 106.8785     </div>`)[0];
+                popup_6fcbf464dc09fe243598fc39f9678ed5.setContent(html_8fc6752a4c168721479a5d74d1285ef4);
+            
+        
+
+        circle_marker_3e164cb7f1c16bac31a0e388c503492f.bindPopup(popup_6fcbf464dc09fe243598fc39f9678ed5)
+        ;
+
+        
+    
+    
+            circle_marker_3e164cb7f1c16bac31a0e388c503492f.bindTooltip(
+                `<div>
+                     Bờ Rừng Lý Nhơn
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d01c31277c410cdd20bb7ac8a4a65824 = L.circleMarker(
+                [10.412, 106.879],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_d59f5b407703c055b0b6395acbe48b3a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_de0e0efa9c72f693b3de0bbe3722fcec = $(`<div id="html_de0e0efa9c72f693b3de0bbe3722fcec" style="width: 100.0%; height: 100.0%;">     <b>Bờ Rừng Lý Nhơn</b><br><br>     <b>ID:</b> 19<br>     <b>Chỉ số Du khách:</b> 3<br>     <b>Xói mòn:</b> 1.1 m/năm<br>     <b>Vi nhựa:</b> 1.25 sợi/g<br>     <b>Vĩ độ:</b> 10.412<br>     <b>Kinh độ:</b> 106.879     </div>`)[0];
+                popup_d59f5b407703c055b0b6395acbe48b3a.setContent(html_de0e0efa9c72f693b3de0bbe3722fcec);
+            
+        
+
+        circle_marker_d01c31277c410cdd20bb7ac8a4a65824.bindPopup(popup_d59f5b407703c055b0b6395acbe48b3a)
+        ;
+
+        
+    
+    
+            circle_marker_d01c31277c410cdd20bb7ac8a4a65824.bindTooltip(
+                `<div>
+                     Bờ Rừng Lý Nhơn
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b17008d25241fbda027dfd207667ee2e = L.circleMarker(
+                [10.4125, 106.8795],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_6b778ce6f819c3eecc4f569c58b5723f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1adf92510b7d25c766afa7e8b0992c55 = $(`<div id="html_1adf92510b7d25c766afa7e8b0992c55" style="width: 100.0%; height: 100.0%;">     <b>Bờ Rừng Lý Nhơn</b><br><br>     <b>ID:</b> 20<br>     <b>Chỉ số Du khách:</b> 4<br>     <b>Xói mòn:</b> 0.9 m/năm<br>     <b>Vi nhựa:</b> 1.45 sợi/g<br>     <b>Vĩ độ:</b> 10.4125<br>     <b>Kinh độ:</b> 106.8795     </div>`)[0];
+                popup_6b778ce6f819c3eecc4f569c58b5723f.setContent(html_1adf92510b7d25c766afa7e8b0992c55);
+            
+        
+
+        circle_marker_b17008d25241fbda027dfd207667ee2e.bindPopup(popup_6b778ce6f819c3eecc4f569c58b5723f)
+        ;
+
+        
+    
+    
+            circle_marker_b17008d25241fbda027dfd207667ee2e.bindTooltip(
+                `<div>
+                     Bờ Rừng Lý Nhơn
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b0e891c67a97baa68d16a13af42d8706 = L.circleMarker(
+                [10.4203, 106.8687],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_5127959325c0b4af3db25814146f6ba8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1acefca818918ccfed71606441347a41 = $(`<div id="html_1acefca818918ccfed71606441347a41" style="width: 100.0%; height: 100.0%;">     <b>Biển 30/4 & Long Hòa</b><br><br>     <b>ID:</b> 21<br>     <b>Chỉ số Du khách:</b> 9<br>     <b>Xói mòn:</b> 0.2 m/năm<br>     <b>Vi nhựa:</b> 4.78 sợi/g<br>     <b>Vĩ độ:</b> 10.4203<br>     <b>Kinh độ:</b> 106.8687     </div>`)[0];
+                popup_5127959325c0b4af3db25814146f6ba8.setContent(html_1acefca818918ccfed71606441347a41);
+            
+        
+
+        circle_marker_b0e891c67a97baa68d16a13af42d8706.bindPopup(popup_5127959325c0b4af3db25814146f6ba8)
+        ;
+
+        
+    
+    
+            circle_marker_b0e891c67a97baa68d16a13af42d8706.bindTooltip(
+                `<div>
+                     Biển 30/4 & Long Hòa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3b8a26fd25039fe773c3369cc4ce4af7 = L.circleMarker(
+                [10.419, 106.8698],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_770e757706966d8f0cc8d7d6e2940f32 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a3ac8aedcd49c42d60990a379c852023 = $(`<div id="html_a3ac8aedcd49c42d60990a379c852023" style="width: 100.0%; height: 100.0%;">     <b>Biển 30/4 & Long Hòa</b><br><br>     <b>ID:</b> 22<br>     <b>Chỉ số Du khách:</b> 8<br>     <b>Xói mòn:</b> 0.1 m/năm<br>     <b>Vi nhựa:</b> 4.08 sợi/g<br>     <b>Vĩ độ:</b> 10.419<br>     <b>Kinh độ:</b> 106.8698     </div>`)[0];
+                popup_770e757706966d8f0cc8d7d6e2940f32.setContent(html_a3ac8aedcd49c42d60990a379c852023);
+            
+        
+
+        circle_marker_3b8a26fd25039fe773c3369cc4ce4af7.bindPopup(popup_770e757706966d8f0cc8d7d6e2940f32)
+        ;
+
+        
+    
+    
+            circle_marker_3b8a26fd25039fe773c3369cc4ce4af7.bindTooltip(
+                `<div>
+                     Biển 30/4 & Long Hòa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_be740750b58621059f5334068b74d891 = L.circleMarker(
+                [10.457, 106.842],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_fd033f5d5ff9850c1466f4301ae2d991 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d114cb5bf7ebebfeb501345f82277c96 = $(`<div id="html_d114cb5bf7ebebfeb501345f82277c96" style="width: 100.0%; height: 100.0%;">     <b>Đảo Khỉ</b><br><br>     <b>ID:</b> 23<br>     <b>Chỉ số Du khách:</b> 9<br>     <b>Xói mòn:</b> 0.0 m/năm<br>     <b>Vi nhựa:</b> 4.4 sợi/g<br>     <b>Vĩ độ:</b> 10.457<br>     <b>Kinh độ:</b> 106.842     </div>`)[0];
+                popup_fd033f5d5ff9850c1466f4301ae2d991.setContent(html_d114cb5bf7ebebfeb501345f82277c96);
+            
+        
+
+        circle_marker_be740750b58621059f5334068b74d891.bindPopup(popup_fd033f5d5ff9850c1466f4301ae2d991)
+        ;
+
+        
+    
+    
+            circle_marker_be740750b58621059f5334068b74d891.bindTooltip(
+                `<div>
+                     Đảo Khỉ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_039e1502454420b4036e4939d699158a = L.circleMarker(
+                [10.509, 106.816],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_5e6ffcf57c209988e75d8688214516f9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_116e4db40e66c45a56940f57f0a47c90 = $(`<div id="html_116e4db40e66c45a56940f57f0a47c90" style="width: 100.0%; height: 100.0%;">     <b>Khu du lịch Vàm Sát</b><br><br>     <b>ID:</b> 24<br>     <b>Chỉ số Du khách:</b> 7<br>     <b>Xói mòn:</b> 0.3 m/năm<br>     <b>Vi nhựa:</b> 1.7 sợi/g<br>     <b>Vĩ độ:</b> 10.509<br>     <b>Kinh độ:</b> 106.816     </div>`)[0];
+                popup_5e6ffcf57c209988e75d8688214516f9.setContent(html_116e4db40e66c45a56940f57f0a47c90);
+            
+        
+
+        circle_marker_039e1502454420b4036e4939d699158a.bindPopup(popup_5e6ffcf57c209988e75d8688214516f9)
+        ;
+
+        
+    
+    
+            circle_marker_039e1502454420b4036e4939d699158a.bindTooltip(
+                `<div>
+                     Khu du lịch Vàm Sát
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2e0d9180bf05c2689a2ea54571af1b68 = L.circleMarker(
+                [10.413, 106.88],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_04c9702e38cdb7994f1571e95a56888d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_abfb8f330b2f9a7c76231cab332a637b = $(`<div id="html_abfb8f330b2f9a7c76231cab332a637b" style="width: 100.0%; height: 100.0%;">     <b>Bờ Rừng Lý Nhơn</b><br><br>     <b>ID:</b> 25<br>     <b>Chỉ số Du khách:</b> 4<br>     <b>Xói mòn:</b> 1.0 m/năm<br>     <b>Vi nhựa:</b> 1.55 sợi/g<br>     <b>Vĩ độ:</b> 10.413<br>     <b>Kinh độ:</b> 106.88     </div>`)[0];
+                popup_04c9702e38cdb7994f1571e95a56888d.setContent(html_abfb8f330b2f9a7c76231cab332a637b);
+            
+        
+
+        circle_marker_2e0d9180bf05c2689a2ea54571af1b68.bindPopup(popup_04c9702e38cdb7994f1571e95a56888d)
+        ;
+
+        
+    
+    
+            circle_marker_2e0d9180bf05c2689a2ea54571af1b68.bindTooltip(
+                `<div>
+                     Bờ Rừng Lý Nhơn
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_319e0670f7f8fd64cafef7b98a9b0e27 = L.circleMarker(
+                [10.44, 106.872],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_f6c7cb5d6f07924cd4966c7d16768c5e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_80059f03b353af5dd250d26797b2d713 = $(`<div id="html_80059f03b353af5dd250d26797b2d713" style="width: 100.0%; height: 100.0%;">     <b>Thị trấn Cần Thạnh</b><br><br>     <b>ID:</b> 26<br>     <b>Chỉ số Du khách:</b> 7<br>     <b>Xói mòn:</b> 0.4 m/năm<br>     <b>Vi nhựa:</b> 3.15 sợi/g<br>     <b>Vĩ độ:</b> 10.44<br>     <b>Kinh độ:</b> 106.872     </div>`)[0];
+                popup_f6c7cb5d6f07924cd4966c7d16768c5e.setContent(html_80059f03b353af5dd250d26797b2d713);
+            
+        
+
+        circle_marker_319e0670f7f8fd64cafef7b98a9b0e27.bindPopup(popup_f6c7cb5d6f07924cd4966c7d16768c5e)
+        ;
+
+        
+    
+    
+            circle_marker_319e0670f7f8fd64cafef7b98a9b0e27.bindTooltip(
+                `<div>
+                     Thị trấn Cần Thạnh
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_76d4076c203126ca1df10c1ea7c93718 = L.circleMarker(
+                [10.441, 106.8715],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_c2e64a6082f1d013051588bd64f4c906 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_050737d1c5b36f5e2c4f41a8550f4f59 = $(`<div id="html_050737d1c5b36f5e2c4f41a8550f4f59" style="width: 100.0%; height: 100.0%;">     <b>Thị trấn Cần Thạnh</b><br><br>     <b>ID:</b> 27<br>     <b>Chỉ số Du khách:</b> 7<br>     <b>Xói mòn:</b> 0.4 m/năm<br>     <b>Vi nhựa:</b> 2.65 sợi/g<br>     <b>Vĩ độ:</b> 10.441<br>     <b>Kinh độ:</b> 106.8715     </div>`)[0];
+                popup_c2e64a6082f1d013051588bd64f4c906.setContent(html_050737d1c5b36f5e2c4f41a8550f4f59);
+            
+        
+
+        circle_marker_76d4076c203126ca1df10c1ea7c93718.bindPopup(popup_c2e64a6082f1d013051588bd64f4c906)
+        ;
+
+        
+    
+    
+            circle_marker_76d4076c203126ca1df10c1ea7c93718.bindTooltip(
+                `<div>
+                     Thị trấn Cần Thạnh
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6b1b99bb41ceee6944906d777553e6df = L.circleMarker(
+                [10.442, 106.871],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_ce67ffda14b8f130fb1e21ef17ae6de1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e0d7be6feb9a8195fef36d7dab1abf67 = $(`<div id="html_e0d7be6feb9a8195fef36d7dab1abf67" style="width: 100.0%; height: 100.0%;">     <b>Thị trấn Cần Thạnh</b><br><br>     <b>ID:</b> 28<br>     <b>Chỉ số Du khách:</b> 7<br>     <b>Xói mòn:</b> 0.4 m/năm<br>     <b>Vi nhựa:</b> 2.7 sợi/g<br>     <b>Vĩ độ:</b> 10.442<br>     <b>Kinh độ:</b> 106.871     </div>`)[0];
+                popup_ce67ffda14b8f130fb1e21ef17ae6de1.setContent(html_e0d7be6feb9a8195fef36d7dab1abf67);
+            
+        
+
+        circle_marker_6b1b99bb41ceee6944906d777553e6df.bindPopup(popup_ce67ffda14b8f130fb1e21ef17ae6de1)
+        ;
+
+        
+    
+    
+            circle_marker_6b1b99bb41ceee6944906d777553e6df.bindTooltip(
+                `<div>
+                     Thị trấn Cần Thạnh
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d946818975de4121bf217086277b1956 = L.circleMarker(
+                [10.443, 106.8705],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_3089fdce2e31bdb481463df23ace19b1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5be2772defb58e5d13f2c56b72f699e1 = $(`<div id="html_5be2772defb58e5d13f2c56b72f699e1" style="width: 100.0%; height: 100.0%;">     <b>Thị trấn Cần Thạnh</b><br><br>     <b>ID:</b> 29<br>     <b>Chỉ số Du khách:</b> 6<br>     <b>Xói mòn:</b> 0.3 m/năm<br>     <b>Vi nhựa:</b> 3.3 sợi/g<br>     <b>Vĩ độ:</b> 10.443<br>     <b>Kinh độ:</b> 106.8705     </div>`)[0];
+                popup_3089fdce2e31bdb481463df23ace19b1.setContent(html_5be2772defb58e5d13f2c56b72f699e1);
+            
+        
+
+        circle_marker_d946818975de4121bf217086277b1956.bindPopup(popup_3089fdce2e31bdb481463df23ace19b1)
+        ;
+
+        
+    
+    
+            circle_marker_d946818975de4121bf217086277b1956.bindTooltip(
+                `<div>
+                     Thị trấn Cần Thạnh
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ff2e9ad595f794471043b47211def1bc = L.circleMarker(
+                [10.45, 106.82],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_dfe24c623663b13d74f32efc607e693c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0219f42f8039ebbf17acb53d9516e9b9 = $(`<div id="html_0219f42f8039ebbf17acb53d9516e9b9" style="width: 100.0%; height: 100.0%;">     <b>Khu du lịch Vàm Sát</b><br><br>     <b>ID:</b> 30<br>     <b>Chỉ số Du khách:</b> 5<br>     <b>Xói mòn:</b> 0.2 m/năm<br>     <b>Vi nhựa:</b> 1.05 sợi/g<br>     <b>Vĩ độ:</b> 10.45<br>     <b>Kinh độ:</b> 106.82     </div>`)[0];
+                popup_dfe24c623663b13d74f32efc607e693c.setContent(html_0219f42f8039ebbf17acb53d9516e9b9);
+            
+        
+
+        circle_marker_ff2e9ad595f794471043b47211def1bc.bindPopup(popup_dfe24c623663b13d74f32efc607e693c)
+        ;
+
+        
+    
+    
+            circle_marker_ff2e9ad595f794471043b47211def1bc.bindTooltip(
+                `<div>
+                     Khu du lịch Vàm Sát
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3be79a31147761f328ef43047146b0b3 = L.circleMarker(
+                [10.451, 106.821],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_4c9885053a5138f412d26b084b0d6fa4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4e02d9944654390954c64f1cd85b7c48 = $(`<div id="html_4e02d9944654390954c64f1cd85b7c48" style="width: 100.0%; height: 100.0%;">     <b>Khu du lịch Vàm Sát</b><br><br>     <b>ID:</b> 31<br>     <b>Chỉ số Du khách:</b> 5<br>     <b>Xói mòn:</b> 0.2 m/năm<br>     <b>Vi nhựa:</b> 1.15 sợi/g<br>     <b>Vĩ độ:</b> 10.451<br>     <b>Kinh độ:</b> 106.821     </div>`)[0];
+                popup_4c9885053a5138f412d26b084b0d6fa4.setContent(html_4e02d9944654390954c64f1cd85b7c48);
+            
+        
+
+        circle_marker_3be79a31147761f328ef43047146b0b3.bindPopup(popup_4c9885053a5138f412d26b084b0d6fa4)
+        ;
+
+        
+    
+    
+            circle_marker_3be79a31147761f328ef43047146b0b3.bindTooltip(
+                `<div>
+                     Khu du lịch Vàm Sát
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3591a42cfe7e6cc139d750da286be81b = L.circleMarker(
+                [10.452, 106.822],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_037efff12b2ba2fce25736bb1879f8f2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f3876cbdb96482ff58fed355e4baf772 = $(`<div id="html_f3876cbdb96482ff58fed355e4baf772" style="width: 100.0%; height: 100.0%;">     <b>Khu du lịch Vàm Sát</b><br><br>     <b>ID:</b> 32<br>     <b>Chỉ số Du khách:</b> 6<br>     <b>Xói mòn:</b> 0.3 m/năm<br>     <b>Vi nhựa:</b> 1.35 sợi/g<br>     <b>Vĩ độ:</b> 10.452<br>     <b>Kinh độ:</b> 106.822     </div>`)[0];
+                popup_037efff12b2ba2fce25736bb1879f8f2.setContent(html_f3876cbdb96482ff58fed355e4baf772);
+            
+        
+
+        circle_marker_3591a42cfe7e6cc139d750da286be81b.bindPopup(popup_037efff12b2ba2fce25736bb1879f8f2)
+        ;
+
+        
+    
+    
+            circle_marker_3591a42cfe7e6cc139d750da286be81b.bindTooltip(
+                `<div>
+                     Khu du lịch Vàm Sát
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b856d0458f479fdda5459aa154be1b3e = L.circleMarker(
+                [10.453, 106.823],
+                {"bubblingMouseEvents": true, "color": "cadetblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cadetblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_989295f606396b7fe43a137e7115ca0e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5cad5fe061a0c720df8298c50e2e6b9a = $(`<div id="html_5cad5fe061a0c720df8298c50e2e6b9a" style="width: 100.0%; height: 100.0%;">     <b>Hệ thống Sông Soài Rạp</b><br><br>     <b>ID:</b> 33<br>     <b>Chỉ số Du khách:</b> 5<br>     <b>Xói mòn:</b> 0.5 m/năm<br>     <b>Vi nhựa:</b> 2.15 sợi/g<br>     <b>Vĩ độ:</b> 10.453<br>     <b>Kinh độ:</b> 106.823     </div>`)[0];
+                popup_989295f606396b7fe43a137e7115ca0e.setContent(html_5cad5fe061a0c720df8298c50e2e6b9a);
+            
+        
+
+        circle_marker_b856d0458f479fdda5459aa154be1b3e.bindPopup(popup_989295f606396b7fe43a137e7115ca0e)
+        ;
+
+        
+    
+    
+            circle_marker_b856d0458f479fdda5459aa154be1b3e.bindTooltip(
+                `<div>
+                     Hệ thống Sông Soài Rạp
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3fa36377ba657322d20f52fc2ebd7b2f = L.circleMarker(
+                [10.454, 106.824],
+                {"bubblingMouseEvents": true, "color": "cadetblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cadetblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_de763f141ad3eeb580eb75787296470a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c502691bf7232b6aef8c1ab29b504331 = $(`<div id="html_c502691bf7232b6aef8c1ab29b504331" style="width: 100.0%; height: 100.0%;">     <b>Hệ thống Sông Soài Rạp</b><br><br>     <b>ID:</b> 34<br>     <b>Chỉ số Du khách:</b> 4<br>     <b>Xói mòn:</b> 0.7 m/năm<br>     <b>Vi nhựa:</b> 2.4 sợi/g<br>     <b>Vĩ độ:</b> 10.454<br>     <b>Kinh độ:</b> 106.824     </div>`)[0];
+                popup_de763f141ad3eeb580eb75787296470a.setContent(html_c502691bf7232b6aef8c1ab29b504331);
+            
+        
+
+        circle_marker_3fa36377ba657322d20f52fc2ebd7b2f.bindPopup(popup_de763f141ad3eeb580eb75787296470a)
+        ;
+
+        
+    
+    
+            circle_marker_3fa36377ba657322d20f52fc2ebd7b2f.bindTooltip(
+                `<div>
+                     Hệ thống Sông Soài Rạp
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_05ce764738baf660fd76b5e3cf4204c4 = L.circleMarker(
+                [10.43, 106.865],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_2c4f196ed7d0d08d310c8844c2759988 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f049ecc303d49e3cf1637d2910ea956b = $(`<div id="html_f049ecc303d49e3cf1637d2910ea956b" style="width: 100.0%; height: 100.0%;">     <b>Khu Đô thị Lấn Biển</b><br><br>     <b>ID:</b> 35<br>     <b>Chỉ số Du khách:</b> 5<br>     <b>Xói mòn:</b> 0.8 m/năm<br>     <b>Vi nhựa:</b> 3.55 sợi/g<br>     <b>Vĩ độ:</b> 10.43<br>     <b>Kinh độ:</b> 106.865     </div>`)[0];
+                popup_2c4f196ed7d0d08d310c8844c2759988.setContent(html_f049ecc303d49e3cf1637d2910ea956b);
+            
+        
+
+        circle_marker_05ce764738baf660fd76b5e3cf4204c4.bindPopup(popup_2c4f196ed7d0d08d310c8844c2759988)
+        ;
+
+        
+    
+    
+            circle_marker_05ce764738baf660fd76b5e3cf4204c4.bindTooltip(
+                `<div>
+                     Khu Đô thị Lấn Biển
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cd30ab06f06f937a54f6a31d17d3dc31 = L.circleMarker(
+                [10.431, 106.8645],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_49e814dd4a428f74c11c4dc24aa9e266 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9c8a2e445bbe174d4bd527d42a44f352 = $(`<div id="html_9c8a2e445bbe174d4bd527d42a44f352" style="width: 100.0%; height: 100.0%;">     <b>Khu Đô thị Lấn Biển</b><br><br>     <b>ID:</b> 36<br>     <b>Chỉ số Du khách:</b> 5<br>     <b>Xói mòn:</b> 1.0 m/năm<br>     <b>Vi nhựa:</b> 3.7 sợi/g<br>     <b>Vĩ độ:</b> 10.431<br>     <b>Kinh độ:</b> 106.8645     </div>`)[0];
+                popup_49e814dd4a428f74c11c4dc24aa9e266.setContent(html_9c8a2e445bbe174d4bd527d42a44f352);
+            
+        
+
+        circle_marker_cd30ab06f06f937a54f6a31d17d3dc31.bindPopup(popup_49e814dd4a428f74c11c4dc24aa9e266)
+        ;
+
+        
+    
+    
+            circle_marker_cd30ab06f06f937a54f6a31d17d3dc31.bindTooltip(
+                `<div>
+                     Khu Đô thị Lấn Biển
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3fa60cdb11257c0f38155800bd68a86b = L.circleMarker(
+                [10.432, 106.864],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_715130d078a4e3002093d39085d0b05d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1ea2cb28fbe0c2048fa5dee134f931ad = $(`<div id="html_1ea2cb28fbe0c2048fa5dee134f931ad" style="width: 100.0%; height: 100.0%;">     <b>Khu Đô thị Lấn Biển</b><br><br>     <b>ID:</b> 37<br>     <b>Chỉ số Du khách:</b> 5<br>     <b>Xói mòn:</b> 0.9 m/năm<br>     <b>Vi nhựa:</b> 3.6 sợi/g<br>     <b>Vĩ độ:</b> 10.432<br>     <b>Kinh độ:</b> 106.864     </div>`)[0];
+                popup_715130d078a4e3002093d39085d0b05d.setContent(html_1ea2cb28fbe0c2048fa5dee134f931ad);
+            
+        
+
+        circle_marker_3fa60cdb11257c0f38155800bd68a86b.bindPopup(popup_715130d078a4e3002093d39085d0b05d)
+        ;
+
+        
+    
+    
+            circle_marker_3fa60cdb11257c0f38155800bd68a86b.bindTooltip(
+                `<div>
+                     Khu Đô thị Lấn Biển
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_22d571cd60b9ec9eafd8d6ade2267469 = L.circleMarker(
+                [10.417, 106.871],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_39761b03028257b218d42c5d7efe49a9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6823358a2e320b48f815c243e89a4c47 = $(`<div id="html_6823358a2e320b48f815c243e89a4c47" style="width: 100.0%; height: 100.0%;">     <b>Biển 30/4 & Long Hòa</b><br><br>     <b>ID:</b> 38<br>     <b>Chỉ số Du khách:</b> 9<br>     <b>Xói mòn:</b> 0.1 m/năm<br>     <b>Vi nhựa:</b> 4.88 sợi/g<br>     <b>Vĩ độ:</b> 10.417<br>     <b>Kinh độ:</b> 106.871     </div>`)[0];
+                popup_39761b03028257b218d42c5d7efe49a9.setContent(html_6823358a2e320b48f815c243e89a4c47);
+            
+        
+
+        circle_marker_22d571cd60b9ec9eafd8d6ade2267469.bindPopup(popup_39761b03028257b218d42c5d7efe49a9)
+        ;
+
+        
+    
+    
+            circle_marker_22d571cd60b9ec9eafd8d6ade2267469.bindTooltip(
+                `<div>
+                     Biển 30/4 & Long Hòa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_61c548e7197025624701839d0138dd1b = L.circleMarker(
+                [10.4165, 106.8715],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_4797b96f943229a25f919ff376ed477c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d8e86a53ef851416ff148d8510d3ea4d = $(`<div id="html_d8e86a53ef851416ff148d8510d3ea4d" style="width: 100.0%; height: 100.0%;">     <b>Biển 30/4 & Long Hòa</b><br><br>     <b>ID:</b> 39<br>     <b>Chỉ số Du khách:</b> 8<br>     <b>Xói mòn:</b> 0.2 m/năm<br>     <b>Vi nhựa:</b> 4.25 sợi/g<br>     <b>Vĩ độ:</b> 10.4165<br>     <b>Kinh độ:</b> 106.8715     </div>`)[0];
+                popup_4797b96f943229a25f919ff376ed477c.setContent(html_d8e86a53ef851416ff148d8510d3ea4d);
+            
+        
+
+        circle_marker_61c548e7197025624701839d0138dd1b.bindPopup(popup_4797b96f943229a25f919ff376ed477c)
+        ;
+
+        
+    
+    
+            circle_marker_61c548e7197025624701839d0138dd1b.bindTooltip(
+                `<div>
+                     Biển 30/4 & Long Hòa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cc6e913e60cf31a1b110fc3e5b821a0e = L.circleMarker(
+                [10.4575, 106.8412],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_4139d46e4edbda043801d58df7a172ff = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_836299005f9195f98190cbe10b1ba20a = $(`<div id="html_836299005f9195f98190cbe10b1ba20a" style="width: 100.0%; height: 100.0%;">     <b>Đảo Khỉ</b><br><br>     <b>ID:</b> 40<br>     <b>Chỉ số Du khách:</b> 9<br>     <b>Xói mòn:</b> 0.0 m/năm<br>     <b>Vi nhựa:</b> 4.55 sợi/g<br>     <b>Vĩ độ:</b> 10.4575<br>     <b>Kinh độ:</b> 106.8412     </div>`)[0];
+                popup_4139d46e4edbda043801d58df7a172ff.setContent(html_836299005f9195f98190cbe10b1ba20a);
+            
+        
+
+        circle_marker_cc6e913e60cf31a1b110fc3e5b821a0e.bindPopup(popup_4139d46e4edbda043801d58df7a172ff)
+        ;
+
+        
+    
+    
+            circle_marker_cc6e913e60cf31a1b110fc3e5b821a0e.bindTooltip(
+                `<div>
+                     Đảo Khỉ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_01dd05d8d02868719ef69297e29c609d = L.circleMarker(
+                [10.5125, 106.8165],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_3508d35961b6db2d48749fab42932e83 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f2a086dcfe151ca6277327520bc89cde = $(`<div id="html_f2a086dcfe151ca6277327520bc89cde" style="width: 100.0%; height: 100.0%;">     <b>Khu du lịch Vàm Sát</b><br><br>     <b>ID:</b> 41<br>     <b>Chỉ số Du khách:</b> 7<br>     <b>Xói mòn:</b> 0.3 m/năm<br>     <b>Vi nhựa:</b> 1.85 sợi/g<br>     <b>Vĩ độ:</b> 10.5125<br>     <b>Kinh độ:</b> 106.8165     </div>`)[0];
+                popup_3508d35961b6db2d48749fab42932e83.setContent(html_f2a086dcfe151ca6277327520bc89cde);
+            
+        
+
+        circle_marker_01dd05d8d02868719ef69297e29c609d.bindPopup(popup_3508d35961b6db2d48749fab42932e83)
+        ;
+
+        
+    
+    
+            circle_marker_01dd05d8d02868719ef69297e29c609d.bindTooltip(
+                `<div>
+                     Khu du lịch Vàm Sát
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_691c0e98097bf0c04bc0169be7e0be8c = L.circleMarker(
+                [10.4105, 106.8775],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_355e2b55f920a216da255c71f8b4914e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c71100f76db361a780beb92f895b1d52 = $(`<div id="html_c71100f76db361a780beb92f895b1d52" style="width: 100.0%; height: 100.0%;">     <b>Bờ Rừng Lý Nhơn</b><br><br>     <b>ID:</b> 42<br>     <b>Chỉ số Du khách:</b> 3<br>     <b>Xói mòn:</b> 1.4 m/năm<br>     <b>Vi nhựa:</b> 1.0 sợi/g<br>     <b>Vĩ độ:</b> 10.4105<br>     <b>Kinh độ:</b> 106.8775     </div>`)[0];
+                popup_355e2b55f920a216da255c71f8b4914e.setContent(html_c71100f76db361a780beb92f895b1d52);
+            
+        
+
+        circle_marker_691c0e98097bf0c04bc0169be7e0be8c.bindPopup(popup_355e2b55f920a216da255c71f8b4914e)
+        ;
+
+        
+    
+    
+            circle_marker_691c0e98097bf0c04bc0169be7e0be8c.bindTooltip(
+                `<div>
+                     Bờ Rừng Lý Nhơn
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e9cb82d4c59a2ed94d8e967ebdfad8f7 = L.circleMarker(
+                [10.435, 106.863],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_e355c09d1926afcb8f99f78edc72db86 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_033998710974c9a8478c580c52f97333 = $(`<div id="html_033998710974c9a8478c580c52f97333" style="width: 100.0%; height: 100.0%;">     <b>Biển 30/4 & Long Hòa</b><br><br>     <b>ID:</b> 43<br>     <b>Chỉ số Du khách:</b> 7<br>     <b>Xói mòn:</b> 0.3 m/năm<br>     <b>Vi nhựa:</b> 4.0 sợi/g<br>     <b>Vĩ độ:</b> 10.435<br>     <b>Kinh độ:</b> 106.863     </div>`)[0];
+                popup_e355c09d1926afcb8f99f78edc72db86.setContent(html_033998710974c9a8478c580c52f97333);
+            
+        
+
+        circle_marker_e9cb82d4c59a2ed94d8e967ebdfad8f7.bindPopup(popup_e355c09d1926afcb8f99f78edc72db86)
+        ;
+
+        
+    
+    
+            circle_marker_e9cb82d4c59a2ed94d8e967ebdfad8f7.bindTooltip(
+                `<div>
+                     Biển 30/4 & Long Hòa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_562109174ffae1de7c5a3d70a5c9f43c = L.circleMarker(
+                [10.445, 106.87],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_8f4efffc2f350cfa7fc3d1cb5a79b666 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e0fc11f21519d130ba5d488fa2029c3b = $(`<div id="html_e0fc11f21519d130ba5d488fa2029c3b" style="width: 100.0%; height: 100.0%;">     <b>Thị trấn Cần Thạnh</b><br><br>     <b>ID:</b> 44<br>     <b>Chỉ số Du khách:</b> 6<br>     <b>Xói mòn:</b> 0.4 m/năm<br>     <b>Vi nhựa:</b> 3.35 sợi/g<br>     <b>Vĩ độ:</b> 10.445<br>     <b>Kinh độ:</b> 106.87     </div>`)[0];
+                popup_8f4efffc2f350cfa7fc3d1cb5a79b666.setContent(html_e0fc11f21519d130ba5d488fa2029c3b);
+            
+        
+
+        circle_marker_562109174ffae1de7c5a3d70a5c9f43c.bindPopup(popup_8f4efffc2f350cfa7fc3d1cb5a79b666)
+        ;
+
+        
+    
+    
+            circle_marker_562109174ffae1de7c5a3d70a5c9f43c.bindTooltip(
+                `<div>
+                     Thị trấn Cần Thạnh
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dfc24754fca456ffa85611d329c3ed47 = L.circleMarker(
+                [10.47, 106.85],
+                {"bubblingMouseEvents": true, "color": "cadetblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cadetblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_4ef7ddf9064fd5a1da95e9d172e567f0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_756f1a58277b0dd3e0cdbd2a8d39b35b = $(`<div id="html_756f1a58277b0dd3e0cdbd2a8d39b35b" style="width: 100.0%; height: 100.0%;">     <b>Hệ thống Sông Lòng Tàu</b><br><br>     <b>ID:</b> 45<br>     <b>Chỉ số Du khách:</b> 5<br>     <b>Xói mòn:</b> 0.5 m/năm<br>     <b>Vi nhựa:</b> 2.05 sợi/g<br>     <b>Vĩ độ:</b> 10.47<br>     <b>Kinh độ:</b> 106.85     </div>`)[0];
+                popup_4ef7ddf9064fd5a1da95e9d172e567f0.setContent(html_756f1a58277b0dd3e0cdbd2a8d39b35b);
+            
+        
+
+        circle_marker_dfc24754fca456ffa85611d329c3ed47.bindPopup(popup_4ef7ddf9064fd5a1da95e9d172e567f0)
+        ;
+
+        
+    
+    
+            circle_marker_dfc24754fca456ffa85611d329c3ed47.bindTooltip(
+                `<div>
+                     Hệ thống Sông Lòng Tàu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bfb8b754357274601405d19f3e0113e9 = L.circleMarker(
+                [10.471, 106.851],
+                {"bubblingMouseEvents": true, "color": "cadetblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cadetblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_c91ef45322afa30d2c9c3960511ac243 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f138354f2ad77727f66bef50ed1dd3b3 = $(`<div id="html_f138354f2ad77727f66bef50ed1dd3b3" style="width: 100.0%; height: 100.0%;">     <b>Hệ thống Sông Lòng Tàu</b><br><br>     <b>ID:</b> 46<br>     <b>Chỉ số Du khách:</b> 5<br>     <b>Xói mòn:</b> 0.5 m/năm<br>     <b>Vi nhựa:</b> 2.1 sợi/g<br>     <b>Vĩ độ:</b> 10.471<br>     <b>Kinh độ:</b> 106.851     </div>`)[0];
+                popup_c91ef45322afa30d2c9c3960511ac243.setContent(html_f138354f2ad77727f66bef50ed1dd3b3);
+            
+        
+
+        circle_marker_bfb8b754357274601405d19f3e0113e9.bindPopup(popup_c91ef45322afa30d2c9c3960511ac243)
+        ;
+
+        
+    
+    
+            circle_marker_bfb8b754357274601405d19f3e0113e9.bindTooltip(
+                `<div>
+                     Hệ thống Sông Lòng Tàu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d79f72fcdaf2fb7d062d0d9329c12920 = L.circleMarker(
+                [10.472, 106.852],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_d6c653890dbd56a38f276e5c7da03eaf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_63fca67abfc275f4fc296fbd454017cc = $(`<div id="html_63fca67abfc275f4fc296fbd454017cc" style="width: 100.0%; height: 100.0%;">     <b>Đảo Khỉ</b><br><br>     <b>ID:</b> 47<br>     <b>Chỉ số Du khách:</b> 7<br>     <b>Xói mòn:</b> 0.2 m/năm<br>     <b>Vi nhựa:</b> 3.6 sợi/g<br>     <b>Vĩ độ:</b> 10.472<br>     <b>Kinh độ:</b> 106.852     </div>`)[0];
+                popup_d6c653890dbd56a38f276e5c7da03eaf.setContent(html_63fca67abfc275f4fc296fbd454017cc);
+            
+        
+
+        circle_marker_d79f72fcdaf2fb7d062d0d9329c12920.bindPopup(popup_d6c653890dbd56a38f276e5c7da03eaf)
+        ;
+
+        
+    
+    
+            circle_marker_d79f72fcdaf2fb7d062d0d9329c12920.bindTooltip(
+                `<div>
+                     Đảo Khỉ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3c2ab5bb721fa3f2ea2d88484f3c9f8c = L.circleMarker(
+                [10.4135, 106.8805],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_5f61dfa9c2f844143947e014fb8b8c9a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d05796af8f2cddd97a5c4f689e02a291 = $(`<div id="html_d05796af8f2cddd97a5c4f689e02a291" style="width: 100.0%; height: 100.0%;">     <b>Bờ Rừng Lý Nhơn</b><br><br>     <b>ID:</b> 48<br>     <b>Chỉ số Du khách:</b> 4<br>     <b>Xói mòn:</b> 1.1 m/năm<br>     <b>Vi nhựa:</b> 1.65 sợi/g<br>     <b>Vĩ độ:</b> 10.4135<br>     <b>Kinh độ:</b> 106.8805     </div>`)[0];
+                popup_5f61dfa9c2f844143947e014fb8b8c9a.setContent(html_d05796af8f2cddd97a5c4f689e02a291);
+            
+        
+
+        circle_marker_3c2ab5bb721fa3f2ea2d88484f3c9f8c.bindPopup(popup_5f61dfa9c2f844143947e014fb8b8c9a)
+        ;
+
+        
+    
+    
+            circle_marker_3c2ab5bb721fa3f2ea2d88484f3c9f8c.bindTooltip(
+                `<div>
+                     Bờ Rừng Lý Nhơn
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e38870c45be71b259ae056b0ae9f7ef8 = L.circleMarker(
+                [10.52, 106.81],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_7e9ef197db30926ccd92f644fe3fda19 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4d20b57485adc13243040befcf4fb090 = $(`<div id="html_4d20b57485adc13243040befcf4fb090" style="width: 100.0%; height: 100.0%;">     <b>Khu du lịch Vàm Sát</b><br><br>     <b>ID:</b> 49<br>     <b>Chỉ số Du khách:</b> 5<br>     <b>Xói mòn:</b> 0.1 m/năm<br>     <b>Vi nhựa:</b> 1.4 sợi/g<br>     <b>Vĩ độ:</b> 10.52<br>     <b>Kinh độ:</b> 106.81     </div>`)[0];
+                popup_7e9ef197db30926ccd92f644fe3fda19.setContent(html_4d20b57485adc13243040befcf4fb090);
+            
+        
+
+        circle_marker_e38870c45be71b259ae056b0ae9f7ef8.bindPopup(popup_7e9ef197db30926ccd92f644fe3fda19)
+        ;
+
+        
+    
+    
+            circle_marker_e38870c45be71b259ae056b0ae9f7ef8.bindTooltip(
+                `<div>
+                     Khu du lịch Vàm Sát
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4725d8c19057090f908518c22f7b408b = L.circleMarker(
+                [10.4195, 106.869],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_4e02a58095fbcf61e6fd0c2c7577b695 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7ec0b3781690f6f50f57f99628165a55 = $(`<div id="html_7ec0b3781690f6f50f57f99628165a55" style="width: 100.0%; height: 100.0%;">     <b>Biển 30/4 & Long Hòa</b><br><br>     <b>ID:</b> 50<br>     <b>Chỉ số Du khách:</b> 10<br>     <b>Xói mòn:</b> 0.1 m/năm<br>     <b>Vi nhựa:</b> 4.98 sợi/g<br>     <b>Vĩ độ:</b> 10.4195<br>     <b>Kinh độ:</b> 106.869     </div>`)[0];
+                popup_4e02a58095fbcf61e6fd0c2c7577b695.setContent(html_7ec0b3781690f6f50f57f99628165a55);
+            
+        
+
+        circle_marker_4725d8c19057090f908518c22f7b408b.bindPopup(popup_4e02a58095fbcf61e6fd0c2c7577b695)
+        ;
+
+        
+    
+    
+            circle_marker_4725d8c19057090f908518c22f7b408b.bindTooltip(
+                `<div>
+                     Biển 30/4 & Long Hòa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_78d942196c4d5e53e060486edd228f1b = L.circleMarker(
+                [10.4565, 106.8425],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_a784b6e27adaf433ced262dc89123f4e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_de6b278804e2978a3ddf2ac77772c70f = $(`<div id="html_de6b278804e2978a3ddf2ac77772c70f" style="width: 100.0%; height: 100.0%;">     <b>Đảo Khỉ</b><br><br>     <b>ID:</b> 51<br>     <b>Chỉ số Du khách:</b> 8<br>     <b>Xói mòn:</b> 0.1 m/năm<br>     <b>Vi nhựa:</b> 4.2 sợi/g<br>     <b>Vĩ độ:</b> 10.4565<br>     <b>Kinh độ:</b> 106.8425     </div>`)[0];
+                popup_a784b6e27adaf433ced262dc89123f4e.setContent(html_de6b278804e2978a3ddf2ac77772c70f);
+            
+        
+
+        circle_marker_78d942196c4d5e53e060486edd228f1b.bindPopup(popup_a784b6e27adaf433ced262dc89123f4e)
+        ;
+
+        
+    
+    
+            circle_marker_78d942196c4d5e53e060486edd228f1b.bindTooltip(
+                `<div>
+                     Đảo Khỉ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_73f27b1fed0f09273471947778e1a804 = L.circleMarker(
+                [10.41, 106.877],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_e976fcdda867da9faf1df9719cd9a8b1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9c5ed338286fa425e6019a7ea2af824e = $(`<div id="html_9c5ed338286fa425e6019a7ea2af824e" style="width: 100.0%; height: 100.0%;">     <b>Bờ Rừng Lý Nhơn</b><br><br>     <b>ID:</b> 52<br>     <b>Chỉ số Du khách:</b> 2<br>     <b>Xói mòn:</b> 1.5 m/năm<br>     <b>Vi nhựa:</b> 1.05 sợi/g<br>     <b>Vĩ độ:</b> 10.41<br>     <b>Kinh độ:</b> 106.877     </div>`)[0];
+                popup_e976fcdda867da9faf1df9719cd9a8b1.setContent(html_9c5ed338286fa425e6019a7ea2af824e);
+            
+        
+
+        circle_marker_73f27b1fed0f09273471947778e1a804.bindPopup(popup_e976fcdda867da9faf1df9719cd9a8b1)
+        ;
+
+        
+    
+    
+            circle_marker_73f27b1fed0f09273471947778e1a804.bindTooltip(
+                `<div>
+                     Bờ Rừng Lý Nhơn
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1f2804c6ee8e5f9167d94afc6244f71c = L.circleMarker(
+                [10.5095, 106.8148],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_2a436893e1a4751e08c5e5beb275d648 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_be4915ad394fb5afac427d27ab610ffb = $(`<div id="html_be4915ad394fb5afac427d27ab610ffb" style="width: 100.0%; height: 100.0%;">     <b>Khu du lịch Vàm Sát</b><br><br>     <b>ID:</b> 53<br>     <b>Chỉ số Du khách:</b> 6<br>     <b>Xói mòn:</b> 0.1 m/năm<br>     <b>Vi nhựa:</b> 1.08 sợi/g<br>     <b>Vĩ độ:</b> 10.5095<br>     <b>Kinh độ:</b> 106.8148     </div>`)[0];
+                popup_2a436893e1a4751e08c5e5beb275d648.setContent(html_be4915ad394fb5afac427d27ab610ffb);
+            
+        
+
+        circle_marker_1f2804c6ee8e5f9167d94afc6244f71c.bindPopup(popup_2a436893e1a4751e08c5e5beb275d648)
+        ;
+
+        
+    
+    
+            circle_marker_1f2804c6ee8e5f9167d94afc6244f71c.bindTooltip(
+                `<div>
+                     Khu du lịch Vàm Sát
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dd2c5751d7fc207419cf24c306e51202 = L.circleMarker(
+                [10.444, 106.8702],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_58681aa86372eb2482eeeafb86bcc518 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_970b9b4e682398b404fcb18ec5114ccf = $(`<div id="html_970b9b4e682398b404fcb18ec5114ccf" style="width: 100.0%; height: 100.0%;">     <b>Thị trấn Cần Thạnh</b><br><br>     <b>ID:</b> 54<br>     <b>Chỉ số Du khách:</b> 6<br>     <b>Xói mòn:</b> 0.3 m/năm<br>     <b>Vi nhựa:</b> 3.2 sợi/g<br>     <b>Vĩ độ:</b> 10.444<br>     <b>Kinh độ:</b> 106.8702     </div>`)[0];
+                popup_58681aa86372eb2482eeeafb86bcc518.setContent(html_970b9b4e682398b404fcb18ec5114ccf);
+            
+        
+
+        circle_marker_dd2c5751d7fc207419cf24c306e51202.bindPopup(popup_58681aa86372eb2482eeeafb86bcc518)
+        ;
+
+        
+    
+    
+            circle_marker_dd2c5751d7fc207419cf24c306e51202.bindTooltip(
+                `<div>
+                     Thị trấn Cần Thạnh
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b14b33273d7e2226d4aface8d526ceff = L.circleMarker(
+                [10.48, 106.855],
+                {"bubblingMouseEvents": true, "color": "cadetblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cadetblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_658239360d0daefbf99067ef36a73b81 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c7155c4f24627e7de22f47727ac0a0f9 = $(`<div id="html_c7155c4f24627e7de22f47727ac0a0f9" style="width: 100.0%; height: 100.0%;">     <b>Hệ thống Sông Cái Mép</b><br><br>     <b>ID:</b> 55<br>     <b>Chỉ số Du khách:</b> 4<br>     <b>Xói mòn:</b> 0.6 m/năm<br>     <b>Vi nhựa:</b> 2.3 sợi/g<br>     <b>Vĩ độ:</b> 10.48<br>     <b>Kinh độ:</b> 106.855     </div>`)[0];
+                popup_658239360d0daefbf99067ef36a73b81.setContent(html_c7155c4f24627e7de22f47727ac0a0f9);
+            
+        
+
+        circle_marker_b14b33273d7e2226d4aface8d526ceff.bindPopup(popup_658239360d0daefbf99067ef36a73b81)
+        ;
+
+        
+    
+    
+            circle_marker_b14b33273d7e2226d4aface8d526ceff.bindTooltip(
+                `<div>
+                     Hệ thống Sông Cái Mép
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_befe482405dae713edd1bb4a7f4ebf14 = L.circleMarker(
+                [10.481, 106.856],
+                {"bubblingMouseEvents": true, "color": "cadetblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cadetblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_18e4885306b10f676f7b33e19216e4e0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6d899729a709208422823d01d2aaa383 = $(`<div id="html_6d899729a709208422823d01d2aaa383" style="width: 100.0%; height: 100.0%;">     <b>Hệ thống Sông Cái Mép</b><br><br>     <b>ID:</b> 56<br>     <b>Chỉ số Du khách:</b> 3<br>     <b>Xói mòn:</b> 0.7 m/năm<br>     <b>Vi nhựa:</b> 2.35 sợi/g<br>     <b>Vĩ độ:</b> 10.481<br>     <b>Kinh độ:</b> 106.856     </div>`)[0];
+                popup_18e4885306b10f676f7b33e19216e4e0.setContent(html_6d899729a709208422823d01d2aaa383);
+            
+        
+
+        circle_marker_befe482405dae713edd1bb4a7f4ebf14.bindPopup(popup_18e4885306b10f676f7b33e19216e4e0)
+        ;
+
+        
+    
+    
+            circle_marker_befe482405dae713edd1bb4a7f4ebf14.bindTooltip(
+                `<div>
+                     Hệ thống Sông Cái Mép
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e6b2979218a625131ebda6084281ee3d = L.circleMarker(
+                [10.482, 106.857],
+                {"bubblingMouseEvents": true, "color": "cadetblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cadetblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_e601522828c73c32c40e2f148bcb7a27 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_705cc9c3ff2ff40f6af98d2292a864e1 = $(`<div id="html_705cc9c3ff2ff40f6af98d2292a864e1" style="width: 100.0%; height: 100.0%;">     <b>Hệ thống Sông Cái Mép</b><br><br>     <b>ID:</b> 57<br>     <b>Chỉ số Du khách:</b> 4<br>     <b>Xói mòn:</b> 0.8 m/năm<br>     <b>Vi nhựa:</b> 2.0 sợi/g<br>     <b>Vĩ độ:</b> 10.482<br>     <b>Kinh độ:</b> 106.857     </div>`)[0];
+                popup_e601522828c73c32c40e2f148bcb7a27.setContent(html_705cc9c3ff2ff40f6af98d2292a864e1);
+            
+        
+
+        circle_marker_e6b2979218a625131ebda6084281ee3d.bindPopup(popup_e601522828c73c32c40e2f148bcb7a27)
+        ;
+
+        
+    
+    
+            circle_marker_e6b2979218a625131ebda6084281ee3d.bindTooltip(
+                `<div>
+                     Hệ thống Sông Cái Mép
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2e71c92cbb2e44f0c01c6f9b98d5a621 = L.circleMarker(
+                [10.4188, 106.8696],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_ca1186d56aceb6f322a74f71e1afff71 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6ae659a72e38d5105fb192feced1fe63 = $(`<div id="html_6ae659a72e38d5105fb192feced1fe63" style="width: 100.0%; height: 100.0%;">     <b>Biển 30/4 & Long Hòa</b><br><br>     <b>ID:</b> 58<br>     <b>Chỉ số Du khách:</b> 8<br>     <b>Xói mòn:</b> 0.2 m/năm<br>     <b>Vi nhựa:</b> 4.1 sợi/g<br>     <b>Vĩ độ:</b> 10.4188<br>     <b>Kinh độ:</b> 106.8696     </div>`)[0];
+                popup_ca1186d56aceb6f322a74f71e1afff71.setContent(html_6ae659a72e38d5105fb192feced1fe63);
+            
+        
+
+        circle_marker_2e71c92cbb2e44f0c01c6f9b98d5a621.bindPopup(popup_ca1186d56aceb6f322a74f71e1afff71)
+        ;
+
+        
+    
+    
+            circle_marker_2e71c92cbb2e44f0c01c6f9b98d5a621.bindTooltip(
+                `<div>
+                     Biển 30/4 & Long Hòa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a06cb15fdee7bcdac985d4e785dc18af = L.circleMarker(
+                [10.455, 106.843],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_3e70b86c97c6deffe12c679175f262ae = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2ad0b44b090c5b0ca098db3a40c47b0e = $(`<div id="html_2ad0b44b090c5b0ca098db3a40c47b0e" style="width: 100.0%; height: 100.0%;">     <b>Đảo Khỉ</b><br><br>     <b>ID:</b> 59<br>     <b>Chỉ số Du khách:</b> 9<br>     <b>Xói mòn:</b> 0.0 m/năm<br>     <b>Vi nhựa:</b> 4.55 sợi/g<br>     <b>Vĩ độ:</b> 10.455<br>     <b>Kinh độ:</b> 106.843     </div>`)[0];
+                popup_3e70b86c97c6deffe12c679175f262ae.setContent(html_2ad0b44b090c5b0ca098db3a40c47b0e);
+            
+        
+
+        circle_marker_a06cb15fdee7bcdac985d4e785dc18af.bindPopup(popup_3e70b86c97c6deffe12c679175f262ae)
+        ;
+
+        
+    
+    
+            circle_marker_a06cb15fdee7bcdac985d4e785dc18af.bindTooltip(
+                `<div>
+                     Đảo Khỉ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_53fa287181773f1d5878726b21001cd7 = L.circleMarker(
+                [10.5085, 106.8152],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_6b68efe299bae824c142449a1be1044a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7fec726a7e5e6a8ba5f6dfbc515d8e79 = $(`<div id="html_7fec726a7e5e6a8ba5f6dfbc515d8e79" style="width: 100.0%; height: 100.0%;">     <b>Khu du lịch Vàm Sát</b><br><br>     <b>ID:</b> 60<br>     <b>Chỉ số Du khách:</b> 7<br>     <b>Xói mòn:</b> 0.3 m/năm<br>     <b>Vi nhựa:</b> 1.72 sợi/g<br>     <b>Vĩ độ:</b> 10.5085<br>     <b>Kinh độ:</b> 106.8152     </div>`)[0];
+                popup_6b68efe299bae824c142449a1be1044a.setContent(html_7fec726a7e5e6a8ba5f6dfbc515d8e79);
+            
+        
+
+        circle_marker_53fa287181773f1d5878726b21001cd7.bindPopup(popup_6b68efe299bae824c142449a1be1044a)
+        ;
+
+        
+    
+    
+            circle_marker_53fa287181773f1d5878726b21001cd7.bindTooltip(
+                `<div>
+                     Khu du lịch Vàm Sát
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aa95426e3c8c59bd2b9240e4bb2c45af = L.circleMarker(
+                [10.414, 106.881],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_5dc296a65c7101ce3a128861382265c5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5cad06d6445d4b9eac4d0ef6352276ac = $(`<div id="html_5cad06d6445d4b9eac4d0ef6352276ac" style="width: 100.0%; height: 100.0%;">     <b>Bờ Rừng Lý Nhơn</b><br><br>     <b>ID:</b> 61<br>     <b>Chỉ số Du khách:</b> 4<br>     <b>Xói mòn:</b> 1.1 m/năm<br>     <b>Vi nhựa:</b> 1.7 sợi/g<br>     <b>Vĩ độ:</b> 10.414<br>     <b>Kinh độ:</b> 106.881     </div>`)[0];
+                popup_5dc296a65c7101ce3a128861382265c5.setContent(html_5cad06d6445d4b9eac4d0ef6352276ac);
+            
+        
+
+        circle_marker_aa95426e3c8c59bd2b9240e4bb2c45af.bindPopup(popup_5dc296a65c7101ce3a128861382265c5)
+        ;
+
+        
+    
+    
+            circle_marker_aa95426e3c8c59bd2b9240e4bb2c45af.bindTooltip(
+                `<div>
+                     Bờ Rừng Lý Nhơn
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4e68d37542226fdbd065bf3379424cd3 = L.circleMarker(
+                [10.4, 106.89],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_f9a81ca8b73276622aebab8c1ca3b6f5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f7c1db66ae760f6ef4d1dbd292633a1b = $(`<div id="html_f7c1db66ae760f6ef4d1dbd292633a1b" style="width: 100.0%; height: 100.0%;">     <b>Đảo Thạnh An</b><br><br>     <b>ID:</b> 62<br>     <b>Chỉ số Du khách:</b> 6<br>     <b>Xói mòn:</b> 0.4 m/năm<br>     <b>Vi nhựa:</b> 3.55 sợi/g<br>     <b>Vĩ độ:</b> 10.4<br>     <b>Kinh độ:</b> 106.89     </div>`)[0];
+                popup_f9a81ca8b73276622aebab8c1ca3b6f5.setContent(html_f7c1db66ae760f6ef4d1dbd292633a1b);
+            
+        
+
+        circle_marker_4e68d37542226fdbd065bf3379424cd3.bindPopup(popup_f9a81ca8b73276622aebab8c1ca3b6f5)
+        ;
+
+        
+    
+    
+            circle_marker_4e68d37542226fdbd065bf3379424cd3.bindTooltip(
+                `<div>
+                     Đảo Thạnh An
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0fa42f90d610274f90a41d3bb3b68abf = L.circleMarker(
+                [10.401, 106.891],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_040f87e07a39f8d42ff0d9c2ef7a1051 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9ae3bf0cc4148f8d83ed7aff5e848696 = $(`<div id="html_9ae3bf0cc4148f8d83ed7aff5e848696" style="width: 100.0%; height: 100.0%;">     <b>Đảo Thạnh An</b><br><br>     <b>ID:</b> 63<br>     <b>Chỉ số Du khách:</b> 6<br>     <b>Xói mòn:</b> 0.4 m/năm<br>     <b>Vi nhựa:</b> 2.8 sợi/g<br>     <b>Vĩ độ:</b> 10.401<br>     <b>Kinh độ:</b> 106.891     </div>`)[0];
+                popup_040f87e07a39f8d42ff0d9c2ef7a1051.setContent(html_9ae3bf0cc4148f8d83ed7aff5e848696);
+            
+        
+
+        circle_marker_0fa42f90d610274f90a41d3bb3b68abf.bindPopup(popup_040f87e07a39f8d42ff0d9c2ef7a1051)
+        ;
+
+        
+    
+    
+            circle_marker_0fa42f90d610274f90a41d3bb3b68abf.bindTooltip(
+                `<div>
+                     Đảo Thạnh An
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_08e3038bbcee1c32a14cac42d3ef35c5 = L.circleMarker(
+                [10.402, 106.892],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_4c1bb44db8aacd6efda36d39ac96716f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a73141420dd07b5e8364ffe01f6f62c1 = $(`<div id="html_a73141420dd07b5e8364ffe01f6f62c1" style="width: 100.0%; height: 100.0%;">     <b>Đảo Thạnh An</b><br><br>     <b>ID:</b> 64<br>     <b>Chỉ số Du khách:</b> 6<br>     <b>Xói mòn:</b> 0.3 m/năm<br>     <b>Vi nhựa:</b> 3.7 sợi/g<br>     <b>Vĩ độ:</b> 10.402<br>     <b>Kinh độ:</b> 106.892     </div>`)[0];
+                popup_4c1bb44db8aacd6efda36d39ac96716f.setContent(html_a73141420dd07b5e8364ffe01f6f62c1);
+            
+        
+
+        circle_marker_08e3038bbcee1c32a14cac42d3ef35c5.bindPopup(popup_4c1bb44db8aacd6efda36d39ac96716f)
+        ;
+
+        
+    
+    
+            circle_marker_08e3038bbcee1c32a14cac42d3ef35c5.bindTooltip(
+                `<div>
+                     Đảo Thạnh An
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dd3210ae0757741ba1acf3faf2d9d5fc = L.circleMarker(
+                [10.403, 106.893],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_dea2fb5b13c01b665200399a088ee426 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_605323a0c546cc81469312304708fbf6 = $(`<div id="html_605323a0c546cc81469312304708fbf6" style="width: 100.0%; height: 100.0%;">     <b>Đảo Thạnh An</b><br><br>     <b>ID:</b> 65<br>     <b>Chỉ số Du khách:</b> 7<br>     <b>Xói mòn:</b> 0.3 m/năm<br>     <b>Vi nhựa:</b> 3.85 sợi/g<br>     <b>Vĩ độ:</b> 10.403<br>     <b>Kinh độ:</b> 106.893     </div>`)[0];
+                popup_dea2fb5b13c01b665200399a088ee426.setContent(html_605323a0c546cc81469312304708fbf6);
+            
+        
+
+        circle_marker_dd3210ae0757741ba1acf3faf2d9d5fc.bindPopup(popup_dea2fb5b13c01b665200399a088ee426)
+        ;
+
+        
+    
+    
+            circle_marker_dd3210ae0757741ba1acf3faf2d9d5fc.bindTooltip(
+                `<div>
+                     Đảo Thạnh An
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6af0fb8428de0dbef41687b775a6c135 = L.circleMarker(
+                [10.39, 106.9],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_1d5535a24a4b625efde277378906caca = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_620533cecaf48ce03b7bb32e8bb57ff3 = $(`<div id="html_620533cecaf48ce03b7bb32e8bb57ff3" style="width: 100.0%; height: 100.0%;">     <b>Đảo Thiềng Liềng</b><br><br>     <b>ID:</b> 66<br>     <b>Chỉ số Du khách:</b> 4<br>     <b>Xói mòn:</b> 0.5 m/năm<br>     <b>Vi nhựa:</b> 2.95 sợi/g<br>     <b>Vĩ độ:</b> 10.39<br>     <b>Kinh độ:</b> 106.9     </div>`)[0];
+                popup_1d5535a24a4b625efde277378906caca.setContent(html_620533cecaf48ce03b7bb32e8bb57ff3);
+            
+        
+
+        circle_marker_6af0fb8428de0dbef41687b775a6c135.bindPopup(popup_1d5535a24a4b625efde277378906caca)
+        ;
+
+        
+    
+    
+            circle_marker_6af0fb8428de0dbef41687b775a6c135.bindTooltip(
+                `<div>
+                     Đảo Thiềng Liềng
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2343e8a7abbda61099ddf1866b349e1b = L.circleMarker(
+                [10.391, 106.901],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_ede4588596a1ecb3cb23845f8346859f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ac77504c4368c3c2bac51c557882dade = $(`<div id="html_ac77504c4368c3c2bac51c557882dade" style="width: 100.0%; height: 100.0%;">     <b>Đảo Thiềng Liềng</b><br><br>     <b>ID:</b> 67<br>     <b>Chỉ số Du khách:</b> 3<br>     <b>Xói mòn:</b> 0.6 m/năm<br>     <b>Vi nhựa:</b> 2.1 sợi/g<br>     <b>Vĩ độ:</b> 10.391<br>     <b>Kinh độ:</b> 106.901     </div>`)[0];
+                popup_ede4588596a1ecb3cb23845f8346859f.setContent(html_ac77504c4368c3c2bac51c557882dade);
+            
+        
+
+        circle_marker_2343e8a7abbda61099ddf1866b349e1b.bindPopup(popup_ede4588596a1ecb3cb23845f8346859f)
+        ;
+
+        
+    
+    
+            circle_marker_2343e8a7abbda61099ddf1866b349e1b.bindTooltip(
+                `<div>
+                     Đảo Thiềng Liềng
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_50b584ff9712a482508c9e191ea5f538 = L.circleMarker(
+                [10.392, 106.902],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_0c0eb946f13974572f8d1c75a84ef95a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cf39f55be6488c58059b1369da0cfcd9 = $(`<div id="html_cf39f55be6488c58059b1369da0cfcd9" style="width: 100.0%; height: 100.0%;">     <b>Đảo Thiềng Liềng</b><br><br>     <b>ID:</b> 68<br>     <b>Chỉ số Du khách:</b> 4<br>     <b>Xói mòn:</b> 0.5 m/năm<br>     <b>Vi nhựa:</b> 1.95 sợi/g<br>     <b>Vĩ độ:</b> 10.392<br>     <b>Kinh độ:</b> 106.902     </div>`)[0];
+                popup_0c0eb946f13974572f8d1c75a84ef95a.setContent(html_cf39f55be6488c58059b1369da0cfcd9);
+            
+        
+
+        circle_marker_50b584ff9712a482508c9e191ea5f538.bindPopup(popup_0c0eb946f13974572f8d1c75a84ef95a)
+        ;
+
+        
+    
+    
+            circle_marker_50b584ff9712a482508c9e191ea5f538.bindTooltip(
+                `<div>
+                     Đảo Thiềng Liềng
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_15ea9b4a67a2df12a94d2bbf69247262 = L.circleMarker(
+                [10.404, 106.894],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_f640eb6f45053e3e032917d6545459d8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d809ae9ce6202c00b1ed2f37c2a107cd = $(`<div id="html_d809ae9ce6202c00b1ed2f37c2a107cd" style="width: 100.0%; height: 100.0%;">     <b>Đảo Thạnh An</b><br><br>     <b>ID:</b> 69<br>     <b>Chỉ số Du khách:</b> 6<br>     <b>Xói mòn:</b> 0.3 m/năm<br>     <b>Vi nhựa:</b> 3.75 sợi/g<br>     <b>Vĩ độ:</b> 10.404<br>     <b>Kinh độ:</b> 106.894     </div>`)[0];
+                popup_f640eb6f45053e3e032917d6545459d8.setContent(html_d809ae9ce6202c00b1ed2f37c2a107cd);
+            
+        
+
+        circle_marker_15ea9b4a67a2df12a94d2bbf69247262.bindPopup(popup_f640eb6f45053e3e032917d6545459d8)
+        ;
+
+        
+    
+    
+            circle_marker_15ea9b4a67a2df12a94d2bbf69247262.bindTooltip(
+                `<div>
+                     Đảo Thạnh An
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3ad5fe65572b3cd38dc8f1d1dd452cbb = L.circleMarker(
+                [10.425, 106.867],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_a0e233364c0cab685aee6cc2e29df893 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bbd2f82bf66164cc5f8bf3be5d2d1cd5 = $(`<div id="html_bbd2f82bf66164cc5f8bf3be5d2d1cd5" style="width: 100.0%; height: 100.0%;">     <b>Biển 30/4 & Long Hòa</b><br><br>     <b>ID:</b> 70<br>     <b>Chỉ số Du khách:</b> 6<br>     <b>Xói mòn:</b> 0.2 m/năm<br>     <b>Vi nhựa:</b> 3.0 sợi/g<br>     <b>Vĩ độ:</b> 10.425<br>     <b>Kinh độ:</b> 106.867     </div>`)[0];
+                popup_a0e233364c0cab685aee6cc2e29df893.setContent(html_bbd2f82bf66164cc5f8bf3be5d2d1cd5);
+            
+        
+
+        circle_marker_3ad5fe65572b3cd38dc8f1d1dd452cbb.bindPopup(popup_a0e233364c0cab685aee6cc2e29df893)
+        ;
+
+        
+    
+    
+            circle_marker_3ad5fe65572b3cd38dc8f1d1dd452cbb.bindTooltip(
+                `<div>
+                     Biển 30/4 & Long Hòa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b4c8a356ea38a04a4997b3b21b5593cb = L.circleMarker(
+                [10.4555, 106.8435],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_2d6d4b083bc0e2707054098ea0c03abf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7c699c757c447ad97f9b74360e04bfa9 = $(`<div id="html_7c699c757c447ad97f9b74360e04bfa9" style="width: 100.0%; height: 100.0%;">     <b>Đảo Khỉ</b><br><br>     <b>ID:</b> 71<br>     <b>Chỉ số Du khách:</b> 8<br>     <b>Xói mòn:</b> 0.1 m/năm<br>     <b>Vi nhựa:</b> 4.1 sợi/g<br>     <b>Vĩ độ:</b> 10.4555<br>     <b>Kinh độ:</b> 106.8435     </div>`)[0];
+                popup_2d6d4b083bc0e2707054098ea0c03abf.setContent(html_7c699c757c447ad97f9b74360e04bfa9);
+            
+        
+
+        circle_marker_b4c8a356ea38a04a4997b3b21b5593cb.bindPopup(popup_2d6d4b083bc0e2707054098ea0c03abf)
+        ;
+
+        
+    
+    
+            circle_marker_b4c8a356ea38a04a4997b3b21b5593cb.bindTooltip(
+                `<div>
+                     Đảo Khỉ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cee2c43c71c3bc4bc271804cb10cb3e2 = L.circleMarker(
+                [10.508, 106.8157],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_e205bbfd1c0d754043e574b9b0bcf5dc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7ce0774b341e91768a84676dde0154b0 = $(`<div id="html_7ce0774b341e91768a84676dde0154b0" style="width: 100.0%; height: 100.0%;">     <b>Khu du lịch Vàm Sát</b><br><br>     <b>ID:</b> 72<br>     <b>Chỉ số Du khách:</b> 7<br>     <b>Xói mòn:</b> 0.3 m/năm<br>     <b>Vi nhựa:</b> 1.68 sợi/g<br>     <b>Vĩ độ:</b> 10.508<br>     <b>Kinh độ:</b> 106.8157     </div>`)[0];
+                popup_e205bbfd1c0d754043e574b9b0bcf5dc.setContent(html_7ce0774b341e91768a84676dde0154b0);
+            
+        
+
+        circle_marker_cee2c43c71c3bc4bc271804cb10cb3e2.bindPopup(popup_e205bbfd1c0d754043e574b9b0bcf5dc)
+        ;
+
+        
+    
+    
+            circle_marker_cee2c43c71c3bc4bc271804cb10cb3e2.bindTooltip(
+                `<div>
+                     Khu du lịch Vàm Sát
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8260bbd1f49e74661d3984fd11c07f66 = L.circleMarker(
+                [10.4145, 106.8815],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_fdc26957d2c10881a5e361497dae597f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4e037ea5aa617f736c2f77778e9490d6 = $(`<div id="html_4e037ea5aa617f736c2f77778e9490d6" style="width: 100.0%; height: 100.0%;">     <b>Bờ Rừng Lý Nhơn</b><br><br>     <b>ID:</b> 73<br>     <b>Chỉ số Du khách:</b> 4<br>     <b>Xói mòn:</b> 1.0 m/năm<br>     <b>Vi nhựa:</b> 1.75 sợi/g<br>     <b>Vĩ độ:</b> 10.4145<br>     <b>Kinh độ:</b> 106.8815     </div>`)[0];
+                popup_fdc26957d2c10881a5e361497dae597f.setContent(html_4e037ea5aa617f736c2f77778e9490d6);
+            
+        
+
+        circle_marker_8260bbd1f49e74661d3984fd11c07f66.bindPopup(popup_fdc26957d2c10881a5e361497dae597f)
+        ;
+
+        
+    
+    
+            circle_marker_8260bbd1f49e74661d3984fd11c07f66.bindTooltip(
+                `<div>
+                     Bờ Rừng Lý Nhơn
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_175a572df0c4db78953231bcbde760f0 = L.circleMarker(
+                [10.446, 106.8698],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_1d3736116fb561255ec4ca794459b3ba = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b59521e8e682bf64ef69f577fbaf3131 = $(`<div id="html_b59521e8e682bf64ef69f577fbaf3131" style="width: 100.0%; height: 100.0%;">     <b>Thị trấn Cần Thạnh</b><br><br>     <b>ID:</b> 74<br>     <b>Chỉ số Du khách:</b> 6<br>     <b>Xói mòn:</b> 0.4 m/năm<br>     <b>Vi nhựa:</b> 3.4 sợi/g<br>     <b>Vĩ độ:</b> 10.446<br>     <b>Kinh độ:</b> 106.8698     </div>`)[0];
+                popup_1d3736116fb561255ec4ca794459b3ba.setContent(html_b59521e8e682bf64ef69f577fbaf3131);
+            
+        
+
+        circle_marker_175a572df0c4db78953231bcbde760f0.bindPopup(popup_1d3736116fb561255ec4ca794459b3ba)
+        ;
+
+        
+    
+    
+            circle_marker_175a572df0c4db78953231bcbde760f0.bindTooltip(
+                `<div>
+                     Thị trấn Cần Thạnh
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fff943bc7cd9a2cb0c253a7a4cc99dce = L.circleMarker(
+                [10.473, 106.853],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_1d226e161cb8e169231e6a69619a959c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d72364efe9fbdd9ee2647efaf35799a2 = $(`<div id="html_d72364efe9fbdd9ee2647efaf35799a2" style="width: 100.0%; height: 100.0%;">     <b>Đảo Khỉ</b><br><br>     <b>ID:</b> 75<br>     <b>Chỉ số Du khách:</b> 7<br>     <b>Xói mòn:</b> 0.1 m/năm<br>     <b>Vi nhựa:</b> 3.5 sợi/g<br>     <b>Vĩ độ:</b> 10.473<br>     <b>Kinh độ:</b> 106.853     </div>`)[0];
+                popup_1d226e161cb8e169231e6a69619a959c.setContent(html_d72364efe9fbdd9ee2647efaf35799a2);
+            
+        
+
+        circle_marker_fff943bc7cd9a2cb0c253a7a4cc99dce.bindPopup(popup_1d226e161cb8e169231e6a69619a959c)
+        ;
+
+        
+    
+    
+            circle_marker_fff943bc7cd9a2cb0c253a7a4cc99dce.bindTooltip(
+                `<div>
+                     Đảo Khỉ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_589a68ad2825bc796122988f0b0d6bd4 = L.circleMarker(
+                [10.474, 106.854],
+                {"bubblingMouseEvents": true, "color": "cadetblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cadetblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_f0bfbd2c09ef31a672765f7283a7774b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_052337165b76d2cb7eefee29b088c2ae = $(`<div id="html_052337165b76d2cb7eefee29b088c2ae" style="width: 100.0%; height: 100.0%;">     <b>Hệ thống Sông Lòng Tàu</b><br><br>     <b>ID:</b> 76<br>     <b>Chỉ số Du khách:</b> 5<br>     <b>Xói mòn:</b> 0.5 m/năm<br>     <b>Vi nhựa:</b> 2.1 sợi/g<br>     <b>Vĩ độ:</b> 10.474<br>     <b>Kinh độ:</b> 106.854     </div>`)[0];
+                popup_f0bfbd2c09ef31a672765f7283a7774b.setContent(html_052337165b76d2cb7eefee29b088c2ae);
+            
+        
+
+        circle_marker_589a68ad2825bc796122988f0b0d6bd4.bindPopup(popup_f0bfbd2c09ef31a672765f7283a7774b)
+        ;
+
+        
+    
+    
+            circle_marker_589a68ad2825bc796122988f0b0d6bd4.bindTooltip(
+                `<div>
+                     Hệ thống Sông Lòng Tàu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2ca59b2bf0116d8103191722c6a86f2f = L.circleMarker(
+                [10.521, 106.809],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_73fb2848c6875008b7470392d907536c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_05df1fdac6b5b892ef82face431e3844 = $(`<div id="html_05df1fdac6b5b892ef82face431e3844" style="width: 100.0%; height: 100.0%;">     <b>Khu du lịch Vàm Sát</b><br><br>     <b>ID:</b> 77<br>     <b>Chỉ số Du khách:</b> 5<br>     <b>Xói mòn:</b> 0.1 m/năm<br>     <b>Vi nhựa:</b> 1.45 sợi/g<br>     <b>Vĩ độ:</b> 10.521<br>     <b>Kinh độ:</b> 106.809     </div>`)[0];
+                popup_73fb2848c6875008b7470392d907536c.setContent(html_05df1fdac6b5b892ef82face431e3844);
+            
+        
+
+        circle_marker_2ca59b2bf0116d8103191722c6a86f2f.bindPopup(popup_73fb2848c6875008b7470392d907536c)
+        ;
+
+        
+    
+    
+            circle_marker_2ca59b2bf0116d8103191722c6a86f2f.bindTooltip(
+                `<div>
+                     Khu du lịch Vàm Sát
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3dd425ed33bbb6a341ddb24ba44e0727 = L.circleMarker(
+                [10.4192, 106.8694],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_6ae286c472f3ffa05ef890ba984f2555 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dffb6ffc3ca14910a13e23f95053e470 = $(`<div id="html_dffb6ffc3ca14910a13e23f95053e470" style="width: 100.0%; height: 100.0%;">     <b>Biển 30/4 & Long Hòa</b><br><br>     <b>ID:</b> 78<br>     <b>Chỉ số Du khách:</b> 9<br>     <b>Xói mòn:</b> 0.2 m/năm<br>     <b>Vi nhựa:</b> 4.88 sợi/g<br>     <b>Vĩ độ:</b> 10.4192<br>     <b>Kinh độ:</b> 106.8694     </div>`)[0];
+                popup_6ae286c472f3ffa05ef890ba984f2555.setContent(html_dffb6ffc3ca14910a13e23f95053e470);
+            
+        
+
+        circle_marker_3dd425ed33bbb6a341ddb24ba44e0727.bindPopup(popup_6ae286c472f3ffa05ef890ba984f2555)
+        ;
+
+        
+    
+    
+            circle_marker_3dd425ed33bbb6a341ddb24ba44e0727.bindTooltip(
+                `<div>
+                     Biển 30/4 & Long Hòa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b7540017c387ff62786e3261f79bdca0 = L.circleMarker(
+                [10.456, 106.8428],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_b075d793cc41d8707529f5ae467a0e95 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7919507fb869a6f3194a9a266d03fc9c = $(`<div id="html_7919507fb869a6f3194a9a266d03fc9c" style="width: 100.0%; height: 100.0%;">     <b>Đảo Khỉ</b><br><br>     <b>ID:</b> 79<br>     <b>Chỉ số Du khách:</b> 9<br>     <b>Xói mòn:</b> 0.0 m/năm<br>     <b>Vi nhựa:</b> 4.5 sợi/g<br>     <b>Vĩ độ:</b> 10.456<br>     <b>Kinh độ:</b> 106.8428     </div>`)[0];
+                popup_b075d793cc41d8707529f5ae467a0e95.setContent(html_7919507fb869a6f3194a9a266d03fc9c);
+            
+        
+
+        circle_marker_b7540017c387ff62786e3261f79bdca0.bindPopup(popup_b075d793cc41d8707529f5ae467a0e95)
+        ;
+
+        
+    
+    
+            circle_marker_b7540017c387ff62786e3261f79bdca0.bindTooltip(
+                `<div>
+                     Đảo Khỉ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f8e7e630415408ea884f976e10d4b32e = L.circleMarker(
+                [10.5075, 106.8162],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_ccbc83fa6129602a9007cdc24c3c2379 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d4cd874e992d6ae22ed80cbb99d9b304 = $(`<div id="html_d4cd874e992d6ae22ed80cbb99d9b304" style="width: 100.0%; height: 100.0%;">     <b>Khu du lịch Vàm Sát</b><br><br>     <b>ID:</b> 80<br>     <b>Chỉ số Du khách:</b> 7<br>     <b>Xói mòn:</b> 0.3 m/năm<br>     <b>Vi nhựa:</b> 1.7 sợi/g<br>     <b>Vĩ độ:</b> 10.5075<br>     <b>Kinh độ:</b> 106.8162     </div>`)[0];
+                popup_ccbc83fa6129602a9007cdc24c3c2379.setContent(html_d4cd874e992d6ae22ed80cbb99d9b304);
+            
+        
+
+        circle_marker_f8e7e630415408ea884f976e10d4b32e.bindPopup(popup_ccbc83fa6129602a9007cdc24c3c2379)
+        ;
+
+        
+    
+    
+            circle_marker_f8e7e630415408ea884f976e10d4b32e.bindTooltip(
+                `<div>
+                     Khu du lịch Vàm Sát
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_24e0a3b375fec0daa9ed15985dd592d8 = L.circleMarker(
+                [10.415, 106.882],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_0ee7ee1ee5db9513d9a25fb44aa1be31 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2d8d19a09ce1e5dee8f80b5e9bfb4488 = $(`<div id="html_2d8d19a09ce1e5dee8f80b5e9bfb4488" style="width: 100.0%; height: 100.0%;">     <b>Bờ Rừng Lý Nhơn</b><br><br>     <b>ID:</b> 81<br>     <b>Chỉ số Du khách:</b> 4<br>     <b>Xói mòn:</b> 1.0 m/năm<br>     <b>Vi nhựa:</b> 1.85 sợi/g<br>     <b>Vĩ độ:</b> 10.415<br>     <b>Kinh độ:</b> 106.882     </div>`)[0];
+                popup_0ee7ee1ee5db9513d9a25fb44aa1be31.setContent(html_2d8d19a09ce1e5dee8f80b5e9bfb4488);
+            
+        
+
+        circle_marker_24e0a3b375fec0daa9ed15985dd592d8.bindPopup(popup_0ee7ee1ee5db9513d9a25fb44aa1be31)
+        ;
+
+        
+    
+    
+            circle_marker_24e0a3b375fec0daa9ed15985dd592d8.bindTooltip(
+                `<div>
+                     Bờ Rừng Lý Nhơn
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5cb26f50b4c75dc256292ff00363095a = L.circleMarker(
+                [10.405, 106.895],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_431b15df9e7202434a09b00e1ed9cdd0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ed33a46b6140cc4f18aef3be3b4c8520 = $(`<div id="html_ed33a46b6140cc4f18aef3be3b4c8520" style="width: 100.0%; height: 100.0%;">     <b>Đảo Thạnh An</b><br><br>     <b>ID:</b> 82<br>     <b>Chỉ số Du khách:</b> 6<br>     <b>Xói mòn:</b> 0.3 m/năm<br>     <b>Vi nhựa:</b> 3.9 sợi/g<br>     <b>Vĩ độ:</b> 10.405<br>     <b>Kinh độ:</b> 106.895     </div>`)[0];
+                popup_431b15df9e7202434a09b00e1ed9cdd0.setContent(html_ed33a46b6140cc4f18aef3be3b4c8520);
+            
+        
+
+        circle_marker_5cb26f50b4c75dc256292ff00363095a.bindPopup(popup_431b15df9e7202434a09b00e1ed9cdd0)
+        ;
+
+        
+    
+    
+            circle_marker_5cb26f50b4c75dc256292ff00363095a.bindTooltip(
+                `<div>
+                     Đảo Thạnh An
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dd65e502b389a89374be796e4f9f9a10 = L.circleMarker(
+                [10.406, 106.896],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_8e78204fbcf069fe31802828b7a5840a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fbede96fc520693b0af5ed42c37d7640 = $(`<div id="html_fbede96fc520693b0af5ed42c37d7640" style="width: 100.0%; height: 100.0%;">     <b>Đảo Thạnh An</b><br><br>     <b>ID:</b> 83<br>     <b>Chỉ số Du khách:</b> 6<br>     <b>Xói mòn:</b> 0.4 m/năm<br>     <b>Vi nhựa:</b> 2.85 sợi/g<br>     <b>Vĩ độ:</b> 10.406<br>     <b>Kinh độ:</b> 106.896     </div>`)[0];
+                popup_8e78204fbcf069fe31802828b7a5840a.setContent(html_fbede96fc520693b0af5ed42c37d7640);
+            
+        
+
+        circle_marker_dd65e502b389a89374be796e4f9f9a10.bindPopup(popup_8e78204fbcf069fe31802828b7a5840a)
+        ;
+
+        
+    
+    
+            circle_marker_dd65e502b389a89374be796e4f9f9a10.bindTooltip(
+                `<div>
+                     Đảo Thạnh An
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6d0325d3bc164063f89245ae6facbba7 = L.circleMarker(
+                [10.393, 106.903],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_65d7ac1884baa9a394d9a5f843f51475 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9c053b670aff388cb405f371adab7dc8 = $(`<div id="html_9c053b670aff388cb405f371adab7dc8" style="width: 100.0%; height: 100.0%;">     <b>Đảo Thiềng Liềng</b><br><br>     <b>ID:</b> 84<br>     <b>Chỉ số Du khách:</b> 4<br>     <b>Xói mòn:</b> 0.5 m/năm<br>     <b>Vi nhựa:</b> 3.0 sợi/g<br>     <b>Vĩ độ:</b> 10.393<br>     <b>Kinh độ:</b> 106.903     </div>`)[0];
+                popup_65d7ac1884baa9a394d9a5f843f51475.setContent(html_9c053b670aff388cb405f371adab7dc8);
+            
+        
+
+        circle_marker_6d0325d3bc164063f89245ae6facbba7.bindPopup(popup_65d7ac1884baa9a394d9a5f843f51475)
+        ;
+
+        
+    
+    
+            circle_marker_6d0325d3bc164063f89245ae6facbba7.bindTooltip(
+                `<div>
+                     Đảo Thiềng Liềng
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_caa8128689c0df715143acf8d11db0bd = L.circleMarker(
+                [10.394, 106.904],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_2e64ca87840c8f62a52de1749526e086 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_16429bacefa1ee370c31150e6a9ee36c = $(`<div id="html_16429bacefa1ee370c31150e6a9ee36c" style="width: 100.0%; height: 100.0%;">     <b>Đảo Thiềng Liềng</b><br><br>     <b>ID:</b> 85<br>     <b>Chỉ số Du khách:</b> 3<br>     <b>Xói mòn:</b> 0.6 m/năm<br>     <b>Vi nhựa:</b> 2.2 sợi/g<br>     <b>Vĩ độ:</b> 10.394<br>     <b>Kinh độ:</b> 106.904     </div>`)[0];
+                popup_2e64ca87840c8f62a52de1749526e086.setContent(html_16429bacefa1ee370c31150e6a9ee36c);
+            
+        
+
+        circle_marker_caa8128689c0df715143acf8d11db0bd.bindPopup(popup_2e64ca87840c8f62a52de1749526e086)
+        ;
+
+        
+    
+    
+            circle_marker_caa8128689c0df715143acf8d11db0bd.bindTooltip(
+                `<div>
+                     Đảo Thiềng Liềng
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dee9b727cc569a688fecc5dec7032446 = L.circleMarker(
+                [10.433, 106.8635],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_0464925f504c458ac74cdc4ef1ea38ce = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_81541d3e01035d04f31561a95d52615c = $(`<div id="html_81541d3e01035d04f31561a95d52615c" style="width: 100.0%; height: 100.0%;">     <b>Khu Đô thị Lấn Biển</b><br><br>     <b>ID:</b> 86<br>     <b>Chỉ số Du khách:</b> 5<br>     <b>Xói mòn:</b> 0.9 m/năm<br>     <b>Vi nhựa:</b> 3.65 sợi/g<br>     <b>Vĩ độ:</b> 10.433<br>     <b>Kinh độ:</b> 106.8635     </div>`)[0];
+                popup_0464925f504c458ac74cdc4ef1ea38ce.setContent(html_81541d3e01035d04f31561a95d52615c);
+            
+        
+
+        circle_marker_dee9b727cc569a688fecc5dec7032446.bindPopup(popup_0464925f504c458ac74cdc4ef1ea38ce)
+        ;
+
+        
+    
+    
+            circle_marker_dee9b727cc569a688fecc5dec7032446.bindTooltip(
+                `<div>
+                     Khu Đô thị Lấn Biển
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_df8a2ecbe2b5c78776032b488d00ed76 = L.circleMarker(
+                [10.434, 106.8632],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_0d5b3ecc8f5caf535e2763215deb4c5c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_676f8a515dd522f762c3ada61715b1c9 = $(`<div id="html_676f8a515dd522f762c3ada61715b1c9" style="width: 100.0%; height: 100.0%;">     <b>Khu Đô thị Lấn Biển</b><br><br>     <b>ID:</b> 87<br>     <b>Chỉ số Du khách:</b> 5<br>     <b>Xói mòn:</b> 1.0 m/năm<br>     <b>Vi nhựa:</b> 3.75 sợi/g<br>     <b>Vĩ độ:</b> 10.434<br>     <b>Kinh độ:</b> 106.8632     </div>`)[0];
+                popup_0d5b3ecc8f5caf535e2763215deb4c5c.setContent(html_676f8a515dd522f762c3ada61715b1c9);
+            
+        
+
+        circle_marker_df8a2ecbe2b5c78776032b488d00ed76.bindPopup(popup_0d5b3ecc8f5caf535e2763215deb4c5c)
+        ;
+
+        
+    
+    
+            circle_marker_df8a2ecbe2b5c78776032b488d00ed76.bindTooltip(
+                `<div>
+                     Khu Đô thị Lấn Biển
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_87ba07e1c5b6ba625e9289d33a858108 = L.circleMarker(
+                [10.4182, 106.8702],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_7f81f3d617098c49f56748e3942e61ea = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f0bde333105584122c45d185b9af8310 = $(`<div id="html_f0bde333105584122c45d185b9af8310" style="width: 100.0%; height: 100.0%;">     <b>Biển 30/4 & Long Hòa</b><br><br>     <b>ID:</b> 88<br>     <b>Chỉ số Du khách:</b> 8<br>     <b>Xói mòn:</b> 0.2 m/năm<br>     <b>Vi nhựa:</b> 3.98 sợi/g<br>     <b>Vĩ độ:</b> 10.4182<br>     <b>Kinh độ:</b> 106.8702     </div>`)[0];
+                popup_7f81f3d617098c49f56748e3942e61ea.setContent(html_f0bde333105584122c45d185b9af8310);
+            
+        
+
+        circle_marker_87ba07e1c5b6ba625e9289d33a858108.bindPopup(popup_7f81f3d617098c49f56748e3942e61ea)
+        ;
+
+        
+    
+    
+            circle_marker_87ba07e1c5b6ba625e9289d33a858108.bindTooltip(
+                `<div>
+                     Biển 30/4 & Long Hòa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_69877b1ed9bd6ff990f7f4810872f235 = L.circleMarker(
+                [10.4545, 106.844],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_733f0f5f6e9b88b9d0deb54dc3652a2b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e76df570cfb5d47b99d9abe2d9324688 = $(`<div id="html_e76df570cfb5d47b99d9abe2d9324688" style="width: 100.0%; height: 100.0%;">     <b>Đảo Khỉ</b><br><br>     <b>ID:</b> 89<br>     <b>Chỉ số Du khách:</b> 8<br>     <b>Xói mòn:</b> 0.1 m/năm<br>     <b>Vi nhựa:</b> 4.25 sợi/g<br>     <b>Vĩ độ:</b> 10.4545<br>     <b>Kinh độ:</b> 106.844     </div>`)[0];
+                popup_733f0f5f6e9b88b9d0deb54dc3652a2b.setContent(html_e76df570cfb5d47b99d9abe2d9324688);
+            
+        
+
+        circle_marker_69877b1ed9bd6ff990f7f4810872f235.bindPopup(popup_733f0f5f6e9b88b9d0deb54dc3652a2b)
+        ;
+
+        
+    
+    
+            circle_marker_69877b1ed9bd6ff990f7f4810872f235.bindTooltip(
+                `<div>
+                     Đảo Khỉ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_530ae644ae7f7dbb450202b0aa736121 = L.circleMarker(
+                [10.5065, 106.8172],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_400cf6f70813843a682c5d863a32fdd3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0b7f5211f8d9bcda58b7ea1dcda0779d = $(`<div id="html_0b7f5211f8d9bcda58b7ea1dcda0779d" style="width: 100.0%; height: 100.0%;">     <b>Khu du lịch Vàm Sát</b><br><br>     <b>ID:</b> 90<br>     <b>Chỉ số Du khách:</b> 6<br>     <b>Xói mòn:</b> 0.2 m/năm<br>     <b>Vi nhựa:</b> 1.15 sợi/g<br>     <b>Vĩ độ:</b> 10.5065<br>     <b>Kinh độ:</b> 106.8172     </div>`)[0];
+                popup_400cf6f70813843a682c5d863a32fdd3.setContent(html_0b7f5211f8d9bcda58b7ea1dcda0779d);
+            
+        
+
+        circle_marker_530ae644ae7f7dbb450202b0aa736121.bindPopup(popup_400cf6f70813843a682c5d863a32fdd3)
+        ;
+
+        
+    
+    
+            circle_marker_530ae644ae7f7dbb450202b0aa736121.bindTooltip(
+                `<div>
+                     Khu du lịch Vàm Sát
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_623cb9d8bc5bcf5b47c8829675beaca8 = L.circleMarker(
+                [10.4155, 106.8825],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_e15343d927ed5cbf582d153f89876257 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7bcc3fadd5d69cb1f3113879c3c9d3f8 = $(`<div id="html_7bcc3fadd5d69cb1f3113879c3c9d3f8" style="width: 100.0%; height: 100.0%;">     <b>Bờ Rừng Lý Nhơn</b><br><br>     <b>ID:</b> 91<br>     <b>Chỉ số Du khách:</b> 4<br>     <b>Xói mòn:</b> 0.9 m/năm<br>     <b>Vi nhựa:</b> 1.9 sợi/g<br>     <b>Vĩ độ:</b> 10.4155<br>     <b>Kinh độ:</b> 106.8825     </div>`)[0];
+                popup_e15343d927ed5cbf582d153f89876257.setContent(html_7bcc3fadd5d69cb1f3113879c3c9d3f8);
+            
+        
+
+        circle_marker_623cb9d8bc5bcf5b47c8829675beaca8.bindPopup(popup_e15343d927ed5cbf582d153f89876257)
+        ;
+
+        
+    
+    
+            circle_marker_623cb9d8bc5bcf5b47c8829675beaca8.bindTooltip(
+                `<div>
+                     Bờ Rừng Lý Nhơn
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a45f0dbf47ab6bbec7970faee2fc4fd2 = L.circleMarker(
+                [10.447, 106.8696],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_f8c6833ecfee27ebb140aa2407897f29 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0864c3032030cda820f44e4781b001c3 = $(`<div id="html_0864c3032030cda820f44e4781b001c3" style="width: 100.0%; height: 100.0%;">     <b>Thị trấn Cần Thạnh</b><br><br>     <b>ID:</b> 92<br>     <b>Chỉ số Du khách:</b> 6<br>     <b>Xói mòn:</b> 0.4 m/năm<br>     <b>Vi nhựa:</b> 3.45 sợi/g<br>     <b>Vĩ độ:</b> 10.447<br>     <b>Kinh độ:</b> 106.8696     </div>`)[0];
+                popup_f8c6833ecfee27ebb140aa2407897f29.setContent(html_0864c3032030cda820f44e4781b001c3);
+            
+        
+
+        circle_marker_a45f0dbf47ab6bbec7970faee2fc4fd2.bindPopup(popup_f8c6833ecfee27ebb140aa2407897f29)
+        ;
+
+        
+    
+    
+            circle_marker_a45f0dbf47ab6bbec7970faee2fc4fd2.bindTooltip(
+                `<div>
+                     Thị trấn Cần Thạnh
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d4ca7fce8892b1ac4cc281477a8c3656 = L.circleMarker(
+                [10.475, 106.855],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_84cdeec4918fd0403a6f8117bc72817d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_88f74cc9bd3a391aaae8c5586b6ab8df = $(`<div id="html_88f74cc9bd3a391aaae8c5586b6ab8df" style="width: 100.0%; height: 100.0%;">     <b>Đảo Khỉ</b><br><br>     <b>ID:</b> 93<br>     <b>Chỉ số Du khách:</b> 7<br>     <b>Xói mòn:</b> 0.1 m/năm<br>     <b>Vi nhựa:</b> 3.4 sợi/g<br>     <b>Vĩ độ:</b> 10.475<br>     <b>Kinh độ:</b> 106.855     </div>`)[0];
+                popup_84cdeec4918fd0403a6f8117bc72817d.setContent(html_88f74cc9bd3a391aaae8c5586b6ab8df);
+            
+        
+
+        circle_marker_d4ca7fce8892b1ac4cc281477a8c3656.bindPopup(popup_84cdeec4918fd0403a6f8117bc72817d)
+        ;
+
+        
+    
+    
+            circle_marker_d4ca7fce8892b1ac4cc281477a8c3656.bindTooltip(
+                `<div>
+                     Đảo Khỉ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_52d3ec8f42473af26afe4d4335149fca = L.circleMarker(
+                [10.476, 106.856],
+                {"bubblingMouseEvents": true, "color": "cadetblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cadetblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_6e444927fe13cbd9a2ead20105f8e52b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d6d6cd3ac4dd994a9c42c1792f8322d5 = $(`<div id="html_d6d6cd3ac4dd994a9c42c1792f8322d5" style="width: 100.0%; height: 100.0%;">     <b>Hệ thống Sông Lòng Tàu</b><br><br>     <b>ID:</b> 94<br>     <b>Chỉ số Du khách:</b> 5<br>     <b>Xói mòn:</b> 0.5 m/năm<br>     <b>Vi nhựa:</b> 2.15 sợi/g<br>     <b>Vĩ độ:</b> 10.476<br>     <b>Kinh độ:</b> 106.856     </div>`)[0];
+                popup_6e444927fe13cbd9a2ead20105f8e52b.setContent(html_d6d6cd3ac4dd994a9c42c1792f8322d5);
+            
+        
+
+        circle_marker_52d3ec8f42473af26afe4d4335149fca.bindPopup(popup_6e444927fe13cbd9a2ead20105f8e52b)
+        ;
+
+        
+    
+    
+            circle_marker_52d3ec8f42473af26afe4d4335149fca.bindTooltip(
+                `<div>
+                     Hệ thống Sông Lòng Tàu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4ed0665e2f18d44d15dd057128067443 = L.circleMarker(
+                [10.522, 106.808],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_bd69d64ffeadc4f458bc4fb99c26dd05 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_801e4cd5ca4d3713cbaf14067ba8544f = $(`<div id="html_801e4cd5ca4d3713cbaf14067ba8544f" style="width: 100.0%; height: 100.0%;">     <b>Khu du lịch Vàm Sát</b><br><br>     <b>ID:</b> 95<br>     <b>Chỉ số Du khách:</b> 5<br>     <b>Xói mòn:</b> 0.1 m/năm<br>     <b>Vi nhựa:</b> 1.5 sợi/g<br>     <b>Vĩ độ:</b> 10.522<br>     <b>Kinh độ:</b> 106.808     </div>`)[0];
+                popup_bd69d64ffeadc4f458bc4fb99c26dd05.setContent(html_801e4cd5ca4d3713cbaf14067ba8544f);
+            
+        
+
+        circle_marker_4ed0665e2f18d44d15dd057128067443.bindPopup(popup_bd69d64ffeadc4f458bc4fb99c26dd05)
+        ;
+
+        
+    
+    
+            circle_marker_4ed0665e2f18d44d15dd057128067443.bindTooltip(
+                `<div>
+                     Khu du lịch Vàm Sát
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_badd5dd63fd57b6526f17de1b29e0704 = L.circleMarker(
+                [10.4184, 106.8704],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_7ddc96fcb47978157be024a73a8ccd01 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3b6c66484fbfe8b354a68d600300b013 = $(`<div id="html_3b6c66484fbfe8b354a68d600300b013" style="width: 100.0%; height: 100.0%;">     <b>Biển 30/4 & Long Hòa</b><br><br>     <b>ID:</b> 96<br>     <b>Chỉ số Du khách:</b> 9<br>     <b>Xói mòn:</b> 0.1 m/năm<br>     <b>Vi nhựa:</b> 4.85 sợi/g<br>     <b>Vĩ độ:</b> 10.4184<br>     <b>Kinh độ:</b> 106.8704     </div>`)[0];
+                popup_7ddc96fcb47978157be024a73a8ccd01.setContent(html_3b6c66484fbfe8b354a68d600300b013);
+            
+        
+
+        circle_marker_badd5dd63fd57b6526f17de1b29e0704.bindPopup(popup_7ddc96fcb47978157be024a73a8ccd01)
+        ;
+
+        
+    
+    
+            circle_marker_badd5dd63fd57b6526f17de1b29e0704.bindTooltip(
+                `<div>
+                     Biển 30/4 & Long Hòa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a064e02726797703b7c24f8f9e9365f5 = L.circleMarker(
+                [10.455, 106.8445],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_893b6448455dc853db6d3712d052ecd9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c293ac944873bc4466d1ce33d4777af5 = $(`<div id="html_c293ac944873bc4466d1ce33d4777af5" style="width: 100.0%; height: 100.0%;">     <b>Đảo Khỉ</b><br><br>     <b>ID:</b> 97<br>     <b>Chỉ số Du khách:</b> 9<br>     <b>Xói mòn:</b> 0.0 m/năm<br>     <b>Vi nhựa:</b> 4.6 sợi/g<br>     <b>Vĩ độ:</b> 10.455<br>     <b>Kinh độ:</b> 106.8445     </div>`)[0];
+                popup_893b6448455dc853db6d3712d052ecd9.setContent(html_c293ac944873bc4466d1ce33d4777af5);
+            
+        
+
+        circle_marker_a064e02726797703b7c24f8f9e9365f5.bindPopup(popup_893b6448455dc853db6d3712d052ecd9)
+        ;
+
+        
+    
+    
+            circle_marker_a064e02726797703b7c24f8f9e9365f5.bindTooltip(
+                `<div>
+                     Đảo Khỉ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fca263c14c9e37712dbdbfcccc0a77bc = L.circleMarker(
+                [10.5065, 106.8172],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_6c3fd46fa90384a6a1c0e508d618cf34 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2f5b73bd47974b16acca900596ac5d3d = $(`<div id="html_2f5b73bd47974b16acca900596ac5d3d" style="width: 100.0%; height: 100.0%;">     <b>Khu du lịch Vàm Sát</b><br><br>     <b>ID:</b> 98<br>     <b>Chỉ số Du khách:</b> 6<br>     <b>Xói mòn:</b> 0.1 m/năm<br>     <b>Vi nhựa:</b> 1.12 sợi/g<br>     <b>Vĩ độ:</b> 10.5065<br>     <b>Kinh độ:</b> 106.8172     </div>`)[0];
+                popup_6c3fd46fa90384a6a1c0e508d618cf34.setContent(html_2f5b73bd47974b16acca900596ac5d3d);
+            
+        
+
+        circle_marker_fca263c14c9e37712dbdbfcccc0a77bc.bindPopup(popup_6c3fd46fa90384a6a1c0e508d618cf34)
+        ;
+
+        
+    
+    
+            circle_marker_fca263c14c9e37712dbdbfcccc0a77bc.bindTooltip(
+                `<div>
+                     Khu du lịch Vàm Sát
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_976e8f8a6c1e66e231ef5c190a800fb3 = L.circleMarker(
+                [10.416, 106.883],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_c19e1451d701c041903ce8fb5f3e301b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_581f1bc0c50da4b74ef76b38c2f0f19b = $(`<div id="html_581f1bc0c50da4b74ef76b38c2f0f19b" style="width: 100.0%; height: 100.0%;">     <b>Bờ Rừng Lý Nhơn</b><br><br>     <b>ID:</b> 99<br>     <b>Chỉ số Du khách:</b> 4<br>     <b>Xói mòn:</b> 0.9 m/năm<br>     <b>Vi nhựa:</b> 1.95 sợi/g<br>     <b>Vĩ độ:</b> 10.416<br>     <b>Kinh độ:</b> 106.883     </div>`)[0];
+                popup_c19e1451d701c041903ce8fb5f3e301b.setContent(html_581f1bc0c50da4b74ef76b38c2f0f19b);
+            
+        
+
+        circle_marker_976e8f8a6c1e66e231ef5c190a800fb3.bindPopup(popup_c19e1451d701c041903ce8fb5f3e301b)
+        ;
+
+        
+    
+    
+            circle_marker_976e8f8a6c1e66e231ef5c190a800fb3.bindTooltip(
+                `<div>
+                     Bờ Rừng Lý Nhơn
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_236fc75b7483b336b2320aaaa1361011 = L.circleMarker(
+                [10.448, 106.8694],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+        
+    
+        var popup_8bce9d52b86878c76373edc4bbebb743 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f42a268caf86fca94643c393f222d186 = $(`<div id="html_f42a268caf86fca94643c393f222d186" style="width: 100.0%; height: 100.0%;">     <b>Thị trấn Cần Thạnh</b><br><br>     <b>ID:</b> 100<br>     <b>Chỉ số Du khách:</b> 6<br>     <b>Xói mòn:</b> 0.3 m/năm<br>     <b>Vi nhựa:</b> 3.5 sợi/g<br>     <b>Vĩ độ:</b> 10.448<br>     <b>Kinh độ:</b> 106.8694     </div>`)[0];
+                popup_8bce9d52b86878c76373edc4bbebb743.setContent(html_f42a268caf86fca94643c393f222d186);
+            
+        
+
+        circle_marker_236fc75b7483b336b2320aaaa1361011.bindPopup(popup_8bce9d52b86878c76373edc4bbebb743)
+        ;
+
+        
+    
+    
+            circle_marker_236fc75b7483b336b2320aaaa1361011.bindTooltip(
+                `<div>
+                     Thị trấn Cần Thạnh
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var layer_control_4b68aa9bc22eec917ff84a7bfa652627_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_4d701b7abb62631222a80eee7a3d6454,
+                },
+                overlays :  {
+                    "Heatmap Vi nh\u1ef1a" : heat_map_65afe6a7823d9d56f279c14b9a41da82,
+                },
+            };
+            let layer_control_4b68aa9bc22eec917ff84a7bfa652627 = L.control.layers(
+                layer_control_4b68aa9bc22eec917ff84a7bfa652627_layers.base_layers,
+                layer_control_4b68aa9bc22eec917ff84a7bfa652627_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_eeda0e7828ac9dffac06f06ac714d99d);
+
+        
+</script>
+</html>
